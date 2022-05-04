@@ -1,0 +1,115 @@
+{
+  "_format": "ethers-rs-sol-cache-3",
+  "paths": {
+    "artifacts": "out",
+    "sources": "src",
+    "tests": "test",
+    "libraries": [
+      "lib"
+    ]
+  },
+  "files": {
+    "/home/freshpizza/git-repos/baskets-price-feed/src/BasketsPriceFeed.sol": {
+      "lastModificationDate": 1651653598037,
+      "contentHash": "a91658e566017ded7676d204853baecc",
+      "sourceName": "src/BasketsPriceFeed.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {}
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/test/Constants.sol": {
+      "lastModificationDate": 1651653644147,
+      "contentHash": "eae568d421e91d941de6adf1a608c06c",
+      "sourceName": "test/Constants.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {}
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/test/MarketsTestingSuite.sol": {
+      "lastModificationDate": 1651653768987,
+      "contentHash": "5e94dec534f7be059a5c0fa9732c3dd8",
+      "sourceName": "test/MarketsTestingSuite.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "src/BasketsPriceFeed.sol",
+        "test/Constants.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {}
+    }
+  }
+}
