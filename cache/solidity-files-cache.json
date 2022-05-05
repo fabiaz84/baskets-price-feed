@@ -9,10 +9,352 @@
     ]
   },
   "files": {
+    "/home/freshpizza/git-repos/baskets-price-feed/lib/openzeppelin-contracts/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1651779779875,
+      "contentHash": "8398972af73b4e9e5ff3b31cad86234f",
+      "sourceName": "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {}
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1651779779955,
+      "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {}
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1651779779955,
+      "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {}
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+      "lastModificationDate": 1651779779965,
+      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {}
+    },
     "/home/freshpizza/git-repos/baskets-price-feed/src/BasketsPriceFeed.sol": {
       "lastModificationDate": 1651653598037,
       "contentHash": "a91658e566017ded7676d204853baecc",
       "sourceName": "src/BasketsPriceFeed.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "BasketsPriceFeed": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "BasketsPriceFeed.sol/BasketsPriceFeed.json"
+        }
+      }
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IBasketFacet.sol": {
+      "lastModificationDate": 1651779341655,
+      "contentHash": "c2963ed5869384a48c85afc21c53b626",
+      "sourceName": "src/Interfaces/IBasketFacet.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {}
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ICToken.sol": {
+      "lastModificationDate": 1651779107895,
+      "contentHash": "e884d875181e73e3767613656e55508f",
+      "sourceName": "src/Interfaces/ICToken.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {}
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IChainLinkOracle.sol": {
+      "lastModificationDate": 1651780415505,
+      "contentHash": "f00f7f6071813249ee968d1114635a81",
+      "sourceName": "src/Interfaces/IChainLinkOracle.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IChainLinkOracle": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "IChainLinkOracle.sol/IChainLinkOracle.json"
+        }
+      }
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ILendingLogic.sol": {
+      "lastModificationDate": 1651780699395,
+      "contentHash": "2344fdea8fcc40c0c3c6ab26506aa1ce",
+      "sourceName": "src/Interfaces/ILendingLogic.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {}
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ILendingRegistry.sol": {
+      "lastModificationDate": 1651779219755,
+      "contentHash": "52dbd880af86ca34e9601273f62e52d7",
+      "sourceName": "src/Interfaces/ILendingRegistry.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {}
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IRecipe.sol": {
+      "lastModificationDate": 1651778971585,
+      "contentHash": "92d3092a9d9c3fd14951d63aa4a1c156",
+      "sourceName": "src/Interfaces/IRecipe.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -73,7 +415,11 @@
       },
       "imports": [],
       "versionRequirement": "^0.8.0",
-      "artifacts": {}
+      "artifacts": {
+        "Constants": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "Constants.sol/Constants.json"
+        }
+      }
     },
     "/home/freshpizza/git-repos/baskets-price-feed/test/MarketsTestingSuite.sol": {
       "lastModificationDate": 1651653768987,
@@ -109,7 +455,11 @@
         "test/Constants.sol"
       ],
       "versionRequirement": "^0.8.0",
-      "artifacts": {}
+      "artifacts": {
+        "MarketsTestingSuite": {
+          "0.8.13+commit.abaa5c0e.Linux.gcc": "MarketsTestingSuite.sol/MarketsTestingSuite.json"
+        }
+      }
     }
   }
 }

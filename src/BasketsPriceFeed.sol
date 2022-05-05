@@ -1,14 +1,18 @@
 pragma solidity ^0.8.0;
 
-import {Ownable} from "@OpenZeppelin/";
-import {IBasketFacet} from "";
-import {ILendingRegistry} from "";
+import {Ownable} from "@openzeppelin/access/Ownable.sol";
+import {IBasketFacet} from "./Interfaces/IBasketFacet.sol";
+import {ILendingRegistry} from "./Interfaces/ILendingRegistry.sol";
+import {IChainLinkOracle} from "./Interfaces/IChainLinkOracle.sol";
+import {IERC20} from "@openzeppelin/token/ERC20/IERC20.sol";
+import {ILendingLogic} from "./Interfaces/ILendingLogic.sol";
+import {IERC20Metadata} from "@openzeppelin/token/ERC20/extensions/IERC20Metadata.sol";
 
 contract BasketsPriceFeed is Ownable {
     IBasketFacet immutable basket;
     ILendingRegistry immutable lendingRegistry;
     uint8 public constant decimals = 18;
-    mapping(address => AggregatorInterface) public linkFeeds;
+    mapping(address => IChainLinkOracle) public linkFeeds;
 
     constructor (address _basket, address _lendingRegistry) {
         basket = IBasketFacet(_basket);
@@ -30,7 +34,7 @@ contract BasketsPriceFeed is Ownable {
             address component = components[i];
             address underlying = lendingRegistry.wrappedToUnderlying(component);
             IERC20 componentToken = IERC20(component);
-            AggregatorInterface linkFeed;
+            IChainLinkOracle linkFeed;
 
             if (underlying != address(0)) { // Wrapped tokens
                 ILendingLogic lendingLogic = ILendingLogic(address(uint160(uint256(lendingRegistry.wrappedToProtocol(component)))));
@@ -38,24 +42,24 @@ contract BasketsPriceFeed is Ownable {
 
                 marketCapUSD += (
                     fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether) *
-                    fmul(10 ** (18 - componentToken.decimals()), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
+                    fmul(10 ** (18 - IERC20Metadata(address(componentToken)).decimals()), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
                 );
             } else { // Non-wrapped tokens
                 linkFeed = linkFeeds[component];
 
                 marketCapUSD += (
                     componentToken.balanceOf(address(basket)) *
-                    fmul(10 ** (18 - componentToken.decimals()), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
+                    fmul(10 ** (18 - IERC20Metadata(address(componentToken)).decimals()), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
                 );
             }
         }
 
-        usdPrice = fdiv(marketCapUSD, basket.totalSupply(), 1 ether);
+        usdPrice = fdiv(marketCapUSD, IERC20(address(basket)).totalSupply(), 1 ether);
         return usdPrice;
     }
 
     function setTokenFeed(address _token, address _oracle) external onlyOwner {
-        linkFeeds[_token] = AggregatorInterface(_oracle);
+        linkFeeds[_token] = IChainLinkOracle(_oracle);
     }
 
     function removeTokenFeed(address _token) external onlyOwner {
