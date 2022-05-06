@@ -1,0 +1,477 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract ICToken",
+          "name": "cToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "newCollateralFactorMantissa",
+          "type": "uint256"
+        }
+      ],
+      "name": "_setCollateralFactor",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ICToken",
+          "name": "cToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "newimfFactorMantissa",
+          "type": "uint256"
+        }
+      ],
+      "name": "_setIMFFactor",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ICToken",
+          "name": "cToken",
+          "type": "address"
+        }
+      ],
+      "name": "_supportMarket",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IComptroller.sol",
+    "id": 21345,
+    "exportedSymbols": {
+      "ICToken": [
+        21220
+      ],
+      "IComptroller": [
+        21344
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "0:368:13",
+    "nodes": [
+      {
+        "id": 21313,
+        "nodeType": "PragmaDirective",
+        "src": "0:23:13",
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 21315,
+        "nodeType": "ImportDirective",
+        "src": "25:38:13",
+        "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ICToken.sol",
+        "file": "./ICToken.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 21345,
+        "sourceUnit": 21221,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 21314,
+              "name": "ICToken",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 21220,
+              "src": "33:7:13",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 21344,
+        "nodeType": "ContractDefinition",
+        "src": "65:302:13",
+        "nodes": [
+          {
+            "id": 21325,
+            "nodeType": "FunctionDefinition",
+            "src": "94:104:13",
+            "functionSelector": "e4028eee",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_setCollateralFactor",
+            "nameLocation": "103:20:13",
+            "parameters": {
+              "id": 21321,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21318,
+                  "mutability": "mutable",
+                  "name": "cToken",
+                  "nameLocation": "132:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21325,
+                  "src": "124:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ICToken_$21220",
+                    "typeString": "contract ICToken"
+                  },
+                  "typeName": {
+                    "id": 21317,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 21316,
+                      "name": "ICToken",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 21220,
+                      "src": "124:7:13"
+                    },
+                    "referencedDeclaration": 21220,
+                    "src": "124:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ICToken_$21220",
+                      "typeString": "contract ICToken"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 21320,
+                  "mutability": "mutable",
+                  "name": "newCollateralFactorMantissa",
+                  "nameLocation": "145:27:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21325,
+                  "src": "140:32:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 21319,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "140:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "123:50:13"
+            },
+            "returnParameters": {
+              "id": 21324,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21323,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21325,
+                  "src": "192:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 21322,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "192:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "191:6:13"
+            },
+            "scope": 21344,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 21335,
+            "nodeType": "FunctionDefinition",
+            "src": "204:90:13",
+            "functionSelector": "0ec43235",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_setIMFFactor",
+            "nameLocation": "213:13:13",
+            "parameters": {
+              "id": 21331,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21328,
+                  "mutability": "mutable",
+                  "name": "cToken",
+                  "nameLocation": "235:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21335,
+                  "src": "227:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ICToken_$21220",
+                    "typeString": "contract ICToken"
+                  },
+                  "typeName": {
+                    "id": 21327,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 21326,
+                      "name": "ICToken",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 21220,
+                      "src": "227:7:13"
+                    },
+                    "referencedDeclaration": 21220,
+                    "src": "227:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ICToken_$21220",
+                      "typeString": "contract ICToken"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 21330,
+                  "mutability": "mutable",
+                  "name": "newimfFactorMantissa",
+                  "nameLocation": "248:20:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21335,
+                  "src": "243:25:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 21329,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "243:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "226:43:13"
+            },
+            "returnParameters": {
+              "id": 21334,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21333,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21335,
+                  "src": "288:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 21332,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "288:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "287:6:13"
+            },
+            "scope": 21344,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 21343,
+            "nodeType": "FunctionDefinition",
+            "src": "300:64:13",
+            "functionSelector": "a76b3fda",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_supportMarket",
+            "nameLocation": "309:14:13",
+            "parameters": {
+              "id": 21339,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21338,
+                  "mutability": "mutable",
+                  "name": "cToken",
+                  "nameLocation": "332:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21343,
+                  "src": "324:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ICToken_$21220",
+                    "typeString": "contract ICToken"
+                  },
+                  "typeName": {
+                    "id": 21337,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 21336,
+                      "name": "ICToken",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 21220,
+                      "src": "324:7:13"
+                    },
+                    "referencedDeclaration": 21220,
+                    "src": "324:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ICToken_$21220",
+                      "typeString": "contract ICToken"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "323:16:13"
+            },
+            "returnParameters": {
+              "id": 21342,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 21341,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21343,
+                  "src": "358:4:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 21340,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "358:4:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "357:6:13"
+            },
+            "scope": 21344,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IComptroller",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          21344
+        ],
+        "name": "IComptroller",
+        "nameLocation": "75:12:13",
+        "scope": 21345,
+        "usedErrors": []
+      }
+    ]
+  }
+}
