@@ -35,6 +35,6 @@ contract Constants {
     address public oracle = 0xEbdC2D2a203c17895Be0daCdf539eeFC710eaFd8;
     address public unitroller = 0x0Be1fdC1E87127c4fe7C05bAE6437e3cf90Bf8d8; //Comptroller interface
     address public usdcInterestRateModel = 0x681Cf55f0276126FAD8842133C839AB4D607E729;
-    IRecipe public recipe = IRecipe(0x6C9c5fd51B95c7BF365955867268ce2EC25Deb5B);
+    address public recipe = 0x6C9c5fd51B95c7BF365955867268ce2EC25Deb5B;
     
 }

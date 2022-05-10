@@ -10,4 +10,5 @@ interface IComptroller{
 
     function _supportMarket(ICToken cToken) external returns (uint);
 
+    function admin() external view returns(address);
 }

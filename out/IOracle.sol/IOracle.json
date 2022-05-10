@@ -115,7 +115,6 @@
         "src": "25:38:16",
         "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ICToken.sol",
         "file": "./ICToken.sol",
-        "nameLocation": "-1:-1:-1",
         "scope": 21546,
         "sourceUnit": 21221,
         "symbolAliases": [
@@ -125,11 +124,9 @@
               "name": "ICToken",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 21220,
               "src": "33:7:16",
               "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
+            }
           }
         ],
         "unitAlias": ""
@@ -148,7 +145,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "setFeed",
-            "nameLocation": "103:7:16",
             "parameters": {
               "id": 21520,
               "nodeType": "ParameterList",
@@ -158,7 +154,6 @@
                   "id": 21515,
                   "mutability": "mutable",
                   "name": "cToken_",
-                  "nameLocation": "119:7:16",
                   "nodeType": "VariableDeclaration",
                   "scope": 21522,
                   "src": "111:15:16",
@@ -192,7 +187,6 @@
                   "id": 21517,
                   "mutability": "mutable",
                   "name": "feed_",
-                  "nameLocation": "136:5:16",
                   "nodeType": "VariableDeclaration",
                   "scope": 21522,
                   "src": "128:13:16",
@@ -220,7 +214,6 @@
                   "id": 21519,
                   "mutability": "mutable",
                   "name": "tokenDecimals_",
-                  "nameLocation": "149:14:16",
                   "nodeType": "VariableDeclaration",
                   "scope": 21522,
                   "src": "143:20:16",
@@ -265,7 +258,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "setFixedPrice",
-            "nameLocation": "189:13:16",
             "parameters": {
               "id": 21528,
               "nodeType": "ParameterList",
@@ -275,7 +267,6 @@
                   "id": 21525,
                   "mutability": "mutable",
                   "name": "cToken_",
-                  "nameLocation": "211:7:16",
                   "nodeType": "VariableDeclaration",
                   "scope": 21530,
                   "src": "203:15:16",
@@ -309,7 +300,6 @@
                   "id": 21527,
                   "mutability": "mutable",
                   "name": "price",
-                  "nameLocation": "225:5:16",
                   "nodeType": "VariableDeclaration",
                   "scope": 21530,
                   "src": "220:10:16",
@@ -354,7 +344,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "removeFixedPrice",
-            "nameLocation": "256:16:16",
             "parameters": {
               "id": 21534,
               "nodeType": "ParameterList",
@@ -364,7 +353,6 @@
                   "id": 21533,
                   "mutability": "mutable",
                   "name": "cToken_",
-                  "nameLocation": "281:7:16",
                   "nodeType": "VariableDeclaration",
                   "scope": 21536,
                   "src": "273:15:16",
@@ -416,7 +404,6 @@
             "kind": "function",
             "modifiers": [],
             "name": "getUnderlyingPrice",
-            "nameLocation": "314:18:16",
             "parameters": {
               "id": 21540,
               "nodeType": "ParameterList",
@@ -426,7 +413,6 @@
                   "id": 21539,
                   "mutability": "mutable",
                   "name": "cToken_",
-                  "nameLocation": "341:7:16",
                   "nodeType": "VariableDeclaration",
                   "scope": 21544,
                   "src": "333:15:16",
@@ -467,7 +453,6 @@
                   "id": 21542,
                   "mutability": "mutable",
                   "name": "",
-                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
                   "scope": 21544,
                   "src": "373:4:16",
@@ -500,7 +485,6 @@
         ],
         "abstract": false,
         "baseContracts": [],
-        "canonicalName": "IOracle",
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
@@ -508,9 +492,7 @@
           21545
         ],
         "name": "IOracle",
-        "nameLocation": "75:7:16",
-        "scope": 21546,
-        "usedErrors": []
+        "scope": 21546
       }
     ]
   }

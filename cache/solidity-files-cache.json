@@ -423,7 +423,7 @@
       "versionRequirement": "^0.8.0",
       "artifacts": {
         "ICToken": {
-          "0.8.13+commit.abaa5c0e.Linux.gcc": "ICToken.sol/ICToken.json"
+          "0.8.1+commit.df193b15.Linux.gcc": "ICToken.sol/ICToken.json"
         }
       }
     },
@@ -461,8 +461,8 @@
       "artifacts": {}
     },
     "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IComptroller.sol": {
-      "lastModificationDate": 1651840621945,
-      "contentHash": "668bd1b5ad408bd535cff8adea807f21",
+      "lastModificationDate": 1652169466694,
+      "contentHash": "9e998e52e155b5e68c3de0e39df8289a",
       "sourceName": "src/Interfaces/IComptroller.sol",
       "solcConfig": {
         "settings": {
@@ -495,7 +495,7 @@
       "versionRequirement": "^0.8.0",
       "artifacts": {
         "IComptroller": {
-          "0.8.13+commit.abaa5c0e.Linux.gcc": "IComptroller.sol/IComptroller.json"
+          "0.8.1+commit.df193b15.Linux.gcc": "IComptroller.sol/IComptroller.json"
         }
       }
     },
@@ -600,7 +600,7 @@
       "versionRequirement": "^0.8.0",
       "artifacts": {
         "IOracle": {
-          "0.8.13+commit.abaa5c0e.Linux.gcc": "IOracle.sol/IOracle.json"
+          "0.8.1+commit.df193b15.Linux.gcc": "IOracle.sol/IOracle.json"
         }
       }
     },
@@ -638,8 +638,8 @@
       "artifacts": {}
     },
     "/home/freshpizza/git-repos/baskets-price-feed/test/Constants.sol": {
-      "lastModificationDate": 1651839319175,
-      "contentHash": "0b9074df4251405191dc59f304531844",
+      "lastModificationDate": 1652168143464,
+      "contentHash": "f3d5a23a883408eb0a34a9e318f074aa",
       "sourceName": "test/Constants.sol",
       "solcConfig": {
         "settings": {
@@ -675,13 +675,13 @@
       "versionRequirement": "^0.8.0",
       "artifacts": {
         "Constants": {
-          "0.8.13+commit.abaa5c0e.Linux.gcc": "Constants.sol/Constants.json"
+          "0.8.1+commit.df193b15.Linux.gcc": "Constants.sol/Constants.json"
         }
       }
     },
     "/home/freshpizza/git-repos/baskets-price-feed/test/MarketsTestingSuite.sol": {
-      "lastModificationDate": 1651843243215,
-      "contentHash": "e4a1c75fc10a2d4028a95a674da264c8",
+      "lastModificationDate": 1652172320554,
+      "contentHash": "3ebd46eb2fbacb2ae895bd65509ca3ea",
       "sourceName": "test/MarketsTestingSuite.sol",
       "solcConfig": {
         "settings": {
@@ -732,10 +732,68 @@
       "versionRequirement": "^0.8.0",
       "artifacts": {
         "Cheats": {
-          "0.8.13+commit.abaa5c0e.Linux.gcc": "MarketsTestingSuite.sol/Cheats.json"
+          "0.8.1+commit.df193b15.Linux.gcc": "MarketsTestingSuite.sol/Cheats.json"
         },
         "MarketsTestingSuite": {
-          "0.8.13+commit.abaa5c0e.Linux.gcc": "MarketsTestingSuite.sol/MarketsTestingSuite.json"
+          "0.8.1+commit.df193b15.Linux.gcc": "MarketsTestingSuite.sol/MarketsTestingSuite.json"
+        }
+      }
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/test/bSTBL/bSTBL.t.sol": {
+      "lastModificationDate": 1652168847984,
+      "contentHash": "1e3d559101a3b68e142e5d9d7a215772",
+      "sourceName": "test/bSTBL/bSTBL.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/solmate/lib/ds-test/src/test.sol",
+        "src/BasketsPriceFeed.sol",
+        "src/Interfaces/IBasketFacet.sol",
+        "src/Interfaces/ICToken.sol",
+        "src/Interfaces/IChainLinkOracle.sol",
+        "src/Interfaces/IComptroller.sol",
+        "src/Interfaces/ILendingLogic.sol",
+        "src/Interfaces/ILendingRegistry.sol",
+        "src/Interfaces/IOracle.sol",
+        "src/Interfaces/IRecipe.sol",
+        "test/Constants.sol",
+        "test/MarketsTestingSuite.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "bSTBLTest": {
+          "0.8.1+commit.df193b15.Linux.gcc": "bSTBL.t.sol/bSTBLTest.json"
         }
       }
     }

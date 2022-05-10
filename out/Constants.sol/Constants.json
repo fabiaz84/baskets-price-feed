@@ -174,7 +174,7 @@
       "name": "recipe",
       "outputs": [
         {
-          "internalType": "contract IRecipe",
+          "internalType": "address",
           "name": "",
           "type": "address"
         }
@@ -210,21 +210,21 @@
     }
   ],
   "bytecode": {
-    "object": "0x6080604052600080546001600160a01b031990811673c0601094c0c88264ba285fef0a1b00ef13e793471790915560018054821673f635fdf9b36b557bd281aa02fdfaebec04cd084a179055600280548216735ee08f40b637417bcc9d2c51b62f4820ec9cf5d817905560038054821673c9bc48c72154ef3e5425641a3c747242112a46af17905560048054821673683923db55fead99a79fa01a27eec3cb19679cc3179055600580548216735d3a536e4d6dbd6114cc1ead35777bab948e364317905560068054821673d4937682df3c8aef4fe912a96a74121c0829e6641790556007805482167303ab458634910aad20ef5f1c8ee96f1d6ac5491917905560088054821673956f47f50a910163d8bf957cf5846d573e7f87ca179055600980548216736b175474e89094c44da98b954eedeac495271d0f179055600a8054821673853d955acef822db058eb8505911ed77f175b99e179055600b805482167308a2b7d713e388123dc6678168656659d297d397179055600c8054821673ebdc2d2a203c17895be0dacdf539eefc710eafd8179055600d80548216730be1fdc1e87127c4fe7c05bae6437e3cf90bf8d8179055600e8054821673681cf55f0276126fad8842133c839ab4d607e729179055600f8054909116736c9c5fd51b95c7bf365955867268ce2ec25deb5b1790553480156101fc57600080fd5b506102878061020c6000396000f3fe608060405234801561001057600080fd5b50600436106101005760003560e01c8063b0e4556f11610097578063e0bab4c411610066578063e0bab4c414610205578063eeb401a914610218578063fb5f135d1461022b578063fe0a0a5d1461023e57600080fd5b8063b0e4556f146101b9578063ba41cea8146101cc578063bad1d3da146101df578063dc99b69f146101f257600080fd5b8063650e5f8d116100d3578063650e5f8d1461016d5780636f6941b9146101805780637dc0d1d0146101935780638a1c4dbc146101a657600080fd5b806305336306146101055780630f7dbfa31461013457806336522b9b1461014757806336f585881461015a575b600080fd5b600054610118906001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b600654610118906001600160a01b031681565b600e54610118906001600160a01b031681565b600f54610118906001600160a01b031681565b600354610118906001600160a01b031681565b600554610118906001600160a01b031681565b600c54610118906001600160a01b031681565b600854610118906001600160a01b031681565b600a54610118906001600160a01b031681565b600454610118906001600160a01b031681565b600d54610118906001600160a01b031681565b600754610118906001600160a01b031681565b600954610118906001600160a01b031681565b600b54610118906001600160a01b031681565b600154610118906001600160a01b031681565b600254610118906001600160a01b03168156fea2646970667358221220f7abd85ecd55cc9aee866df20f558c9e73cb175703fe8494b834e126f48f4afe64736f6c634300080d0033",
-    "sourceMap": "274:1453:18:-:0;;;392:74;;;-1:-1:-1;;;;;;392:74:18;;;423:42;392:74;;;;;472;;;;503:42;472:74;;;553:65;;;;;576:42;553:65;;;625:64;;;;;647:42;625:64;;;695;;;;;717:42;695:64;;;765;;;;;787:42;765:64;;;835:65;;;;;858:42;835:65;;;907:63;;;;;928:42;907:63;;;976;;;;;997:42;976:63;;;1045;;;;;1066:42;1045:63;;;1114:64;;;;;1136:42;1114:64;;;1185:102;;;;;1244:42;1185:102;;;1385:66;;;;;1409:42;1385:66;;;1457:70;;;;;1485:42;1457:70;;;1557:81;;;;;1596:42;1557:81;;;1644:75;;;;;;1676:42;1644:75;;;274:1453;;;;;;;;;;;;;;;;",
+    "object": "0x6080604052600080546001600160a01b031990811673c0601094c0c88264ba285fef0a1b00ef13e793471790915560018054821673f635fdf9b36b557bd281aa02fdfaebec04cd084a179055600280548216735ee08f40b637417bcc9d2c51b62f4820ec9cf5d817905560038054821673c9bc48c72154ef3e5425641a3c747242112a46af17905560048054821673683923db55fead99a79fa01a27eec3cb19679cc3179055600580548216735d3a536e4d6dbd6114cc1ead35777bab948e364317905560068054821673d4937682df3c8aef4fe912a96a74121c0829e6641790556007805482167303ab458634910aad20ef5f1c8ee96f1d6ac5491917905560088054821673956f47f50a910163d8bf957cf5846d573e7f87ca179055600980548216736b175474e89094c44da98b954eedeac495271d0f179055600a8054821673853d955acef822db058eb8505911ed77f175b99e179055600b805482167308a2b7d713e388123dc6678168656659d297d397179055600c8054821673ebdc2d2a203c17895be0dacdf539eefc710eafd8179055600d80548216730be1fdc1e87127c4fe7c05bae6437e3cf90bf8d8179055600e8054821673681cf55f0276126fad8842133c839ab4d607e729179055600f8054909116736c9c5fd51b95c7bf365955867268ce2ec25deb5b1790553480156101fc57600080fd5b506102d58061020c6000396000f3fe608060405234801561001057600080fd5b50600436106101005760003560e01c8063b0e4556f11610097578063e0bab4c411610066578063e0bab4c41461017b578063eeb401a914610183578063fb5f135d1461018b578063fe0a0a5d1461019357610100565b8063b0e4556f1461015b578063ba41cea814610163578063bad1d3da1461016b578063dc99b69f1461017357610100565b8063650e5f8d116100d3578063650e5f8d1461013b5780636f6941b9146101435780637dc0d1d01461014b5780638a1c4dbc1461015357610100565b806305336306146101055780630f7dbfa31461012357806336522b9b1461012b57806336f5858814610133575b600080fd5b61010d61019b565b60405161011a919061028b565b60405180910390f35b61010d6101aa565b61010d6101b9565b61010d6101c8565b61010d6101d7565b61010d6101e6565b61010d6101f5565b61010d610204565b61010d610213565b61010d610222565b61010d610231565b61010d610240565b61010d61024f565b61010d61025e565b61010d61026d565b61010d61027c565b6000546001600160a01b031681565b6006546001600160a01b031681565b600e546001600160a01b031681565b600f546001600160a01b031681565b6003546001600160a01b031681565b6005546001600160a01b031681565b600c546001600160a01b031681565b6008546001600160a01b031681565b600a546001600160a01b031681565b6004546001600160a01b031681565b600d546001600160a01b031681565b6007546001600160a01b031681565b6009546001600160a01b031681565b600b546001600160a01b031681565b6001546001600160a01b031681565b6002546001600160a01b031681565b6001600160a01b039190911681526020019056fea2646970667358221220ccb5269e1a46fc5399574fc4c96d9710aadde8a8cca5e6397d8ba4ddb50b95fb64736f6c63430008010033",
+    "sourceMap": "274:1444:18:-:0;;;392:74;;;-1:-1:-1;;;;;;392:74:18;;;423:42;392:74;;;;;472;;;;503:42;472:74;;;553:65;;;;;576:42;553:65;;;625:64;;;;;647:42;625:64;;;695;;;;;717:42;695:64;;;765;;;;;787:42;765:64;;;835:65;;;;;858:42;835:65;;;907:63;;;;;928:42;907:63;;;976;;;;;997:42;976:63;;;1045;;;;;1066:42;1045:63;;;1114:64;;;;;1136:42;1114:64;;;1185:102;;;;;1244:42;1185:102;;;1385:66;;;;;1409:42;1385:66;;;1457:70;;;;;1485:42;1457:70;;;1557:81;;;;;1596:42;1557:81;;;1644:66;;;;;;1668:42;1644:66;;;274:1444;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x608060405234801561001057600080fd5b50600436106101005760003560e01c8063b0e4556f11610097578063e0bab4c411610066578063e0bab4c414610205578063eeb401a914610218578063fb5f135d1461022b578063fe0a0a5d1461023e57600080fd5b8063b0e4556f146101b9578063ba41cea8146101cc578063bad1d3da146101df578063dc99b69f146101f257600080fd5b8063650e5f8d116100d3578063650e5f8d1461016d5780636f6941b9146101805780637dc0d1d0146101935780638a1c4dbc146101a657600080fd5b806305336306146101055780630f7dbfa31461013457806336522b9b1461014757806336f585881461015a575b600080fd5b600054610118906001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b600654610118906001600160a01b031681565b600e54610118906001600160a01b031681565b600f54610118906001600160a01b031681565b600354610118906001600160a01b031681565b600554610118906001600160a01b031681565b600c54610118906001600160a01b031681565b600854610118906001600160a01b031681565b600a54610118906001600160a01b031681565b600454610118906001600160a01b031681565b600d54610118906001600160a01b031681565b600754610118906001600160a01b031681565b600954610118906001600160a01b031681565b600b54610118906001600160a01b031681565b600154610118906001600160a01b031681565b600254610118906001600160a01b03168156fea2646970667358221220f7abd85ecd55cc9aee866df20f558c9e73cb175703fe8494b834e126f48f4afe64736f6c634300080d0033",
-    "sourceMap": "274:1453:18:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;392:74;;;;;-1:-1:-1;;;;;392:74:18;;;;;;-1:-1:-1;;;;;195:32:20;;;177:51;;165:2;150:18;392:74:18;;;;;;;835:65;;;;;-1:-1:-1;;;;;835:65:18;;;1557:81;;;;;-1:-1:-1;;;;;1557:81:18;;;1644:75;;;;;-1:-1:-1;;;;;1644:75:18;;;625:64;;;;;-1:-1:-1;;;;;625:64:18;;;765;;;;;-1:-1:-1;;;;;765:64:18;;;1385:66;;;;;-1:-1:-1;;;;;1385:66:18;;;976:63;;;;;-1:-1:-1;;;;;976:63:18;;;1114:64;;;;;-1:-1:-1;;;;;1114:64:18;;;695;;;;;-1:-1:-1;;;;;695:64:18;;;1457:70;;;;;-1:-1:-1;;;;;1457:70:18;;;907:63;;;;;-1:-1:-1;;;;;907:63:18;;;1045;;;;;-1:-1:-1;;;;;1045:63:18;;;1185:102;;;;;-1:-1:-1;;;;;1185:102:18;;;472:74;;;;;-1:-1:-1;;;;;472:74:18;;;553:65;;;;;-1:-1:-1;;;;;553:65:18;;",
+    "object": "0x608060405234801561001057600080fd5b50600436106101005760003560e01c8063b0e4556f11610097578063e0bab4c411610066578063e0bab4c41461017b578063eeb401a914610183578063fb5f135d1461018b578063fe0a0a5d1461019357610100565b8063b0e4556f1461015b578063ba41cea814610163578063bad1d3da1461016b578063dc99b69f1461017357610100565b8063650e5f8d116100d3578063650e5f8d1461013b5780636f6941b9146101435780637dc0d1d01461014b5780638a1c4dbc1461015357610100565b806305336306146101055780630f7dbfa31461012357806336522b9b1461012b57806336f5858814610133575b600080fd5b61010d61019b565b60405161011a919061028b565b60405180910390f35b61010d6101aa565b61010d6101b9565b61010d6101c8565b61010d6101d7565b61010d6101e6565b61010d6101f5565b61010d610204565b61010d610213565b61010d610222565b61010d610231565b61010d610240565b61010d61024f565b61010d61025e565b61010d61026d565b61010d61027c565b6000546001600160a01b031681565b6006546001600160a01b031681565b600e546001600160a01b031681565b600f546001600160a01b031681565b6003546001600160a01b031681565b6005546001600160a01b031681565b600c546001600160a01b031681565b6008546001600160a01b031681565b600a546001600160a01b031681565b6004546001600160a01b031681565b600d546001600160a01b031681565b6007546001600160a01b031681565b6009546001600160a01b031681565b600b546001600160a01b031681565b6001546001600160a01b031681565b6002546001600160a01b031681565b6001600160a01b039190911681526020019056fea2646970667358221220ccb5269e1a46fc5399574fc4c96d9710aadde8a8cca5e6397d8ba4ddb50b95fb64736f6c63430008010033",
+    "sourceMap": "274:1444:18:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;392:74;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;835:65;;;:::i;1557:81::-;;;:::i;1644:66::-;;;:::i;625:64::-;;;:::i;765:::-;;;:::i;1385:66::-;;;:::i;976:63::-;;;:::i;1114:64::-;;;:::i;695:::-;;;:::i;1457:70::-;;;:::i;907:63::-;;;:::i;1045:::-;;;:::i;1185:102::-;;;:::i;472:74::-;;;:::i;553:65::-;;;:::i;392:74::-;;;-1:-1:-1;;;;;392:74:18;;:::o;835:65::-;;;-1:-1:-1;;;;;835:65:18;;:::o;1557:81::-;;;-1:-1:-1;;;;;1557:81:18;;:::o;1644:66::-;;;-1:-1:-1;;;;;1644:66:18;;:::o;625:64::-;;;-1:-1:-1;;;;;625:64:18;;:::o;765:::-;;;-1:-1:-1;;;;;765:64:18;;:::o;1385:66::-;;;-1:-1:-1;;;;;1385:66:18;;:::o;976:63::-;;;-1:-1:-1;;;;;976:63:18;;:::o;1114:64::-;;;-1:-1:-1;;;;;1114:64:18;;:::o;695:::-;;;-1:-1:-1;;;;;695:64:18;;:::o;1457:70::-;;;-1:-1:-1;;;;;1457:70:18;;:::o;907:63::-;;;-1:-1:-1;;;;;907:63:18;;:::o;1045:::-;;;-1:-1:-1;;;;;1045:63:18;;:::o;1185:102::-;;;-1:-1:-1;;;;;1185:102:18;;:::o;472:74::-;;;-1:-1:-1;;;;;472:74:18;;:::o;553:65::-;;;-1:-1:-1;;;;;553:65:18;;:::o;14:203:21:-;-1:-1:-1;;;;;178:32:21;;;;160:51;;148:2;133:18;;115:102::o",
     "linkReferences": {}
   },
   "ast": {
     "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/test/Constants.sol",
-    "id": 21672,
+    "id": 21669,
     "exportedSymbols": {
       "Constants": [
-        21671
+        21668
       ],
       "IBasketFacet": [
         21146
@@ -240,7 +240,7 @@
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "0:1728:18",
+    "src": "0:1719:18",
     "nodes": [
       {
         "id": 21602,
@@ -259,8 +259,7 @@
         "src": "25:54:18",
         "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ICToken.sol",
         "file": "../src/Interfaces/ICToken.sol",
-        "nameLocation": "-1:-1:-1",
-        "scope": 21672,
+        "scope": 21669,
         "sourceUnit": 21221,
         "symbolAliases": [
           {
@@ -269,11 +268,9 @@
               "name": "ICToken",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 21220,
               "src": "33:7:18",
               "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
+            }
           }
         ],
         "unitAlias": ""
@@ -284,8 +281,7 @@
         "src": "80:54:18",
         "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IRecipe.sol",
         "file": "../src/Interfaces/IRecipe.sol",
-        "nameLocation": "-1:-1:-1",
-        "scope": 21672,
+        "scope": 21669,
         "sourceUnit": 21601,
         "symbolAliases": [
           {
@@ -294,11 +290,9 @@
               "name": "IRecipe",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 21600,
               "src": "88:7:18",
               "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
+            }
           }
         ],
         "unitAlias": ""
@@ -309,8 +303,7 @@
         "src": "135:72:18",
         "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ILendingRegistry.sol",
         "file": "../src/Interfaces/ILendingRegistry.sol",
-        "nameLocation": "-1:-1:-1",
-        "scope": 21672,
+        "scope": 21669,
         "sourceUnit": 21509,
         "symbolAliases": [
           {
@@ -319,11 +312,9 @@
               "name": "ILendingRegistry",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 21508,
               "src": "143:16:18",
               "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
+            }
           }
         ],
         "unitAlias": ""
@@ -334,8 +325,7 @@
         "src": "208:64:18",
         "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IBasketFacet.sol",
         "file": "../src/Interfaces/IBasketFacet.sol",
-        "nameLocation": "-1:-1:-1",
-        "scope": 21672,
+        "scope": 21669,
         "sourceUnit": 21147,
         "symbolAliases": [
           {
@@ -344,19 +334,17 @@
               "name": "IBasketFacet",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 21146,
               "src": "216:12:18",
               "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
+            }
           }
         ],
         "unitAlias": ""
       },
       {
-        "id": 21671,
+        "id": 21668,
         "nodeType": "ContractDefinition",
-        "src": "274:1453:18",
+        "src": "274:1444:18",
         "nodes": [
           {
             "id": 21616,
@@ -366,8 +354,7 @@
             "functionSelector": "05336306",
             "mutability": "mutable",
             "name": "bdUSD",
-            "nameLocation": "407:5:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -453,8 +440,7 @@
             "functionSelector": "fb5f135d",
             "mutability": "mutable",
             "name": "bdETH",
-            "nameLocation": "487:5:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -540,8 +526,7 @@
             "functionSelector": "fe0a0a5d",
             "mutability": "mutable",
             "name": "bSTBL",
-            "nameLocation": "568:5:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -585,8 +570,7 @@
             "functionSelector": "650e5f8d",
             "mutability": "mutable",
             "name": "aRAI",
-            "nameLocation": "640:4:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -630,8 +614,7 @@
             "functionSelector": "ba41cea8",
             "mutability": "mutable",
             "name": "aFEI",
-            "nameLocation": "710:4:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -675,8 +658,7 @@
             "functionSelector": "6f6941b9",
             "mutability": "mutable",
             "name": "cDAI",
-            "nameLocation": "780:4:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -720,8 +702,7 @@
             "functionSelector": "0f7dbfa3",
             "mutability": "mutable",
             "name": "aFRAX",
-            "nameLocation": "850:5:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -765,8 +746,7 @@
             "functionSelector": "dc99b69f",
             "mutability": "mutable",
             "name": "RAI",
-            "nameLocation": "922:3:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -810,8 +790,7 @@
             "functionSelector": "8a1c4dbc",
             "mutability": "mutable",
             "name": "FEI",
-            "nameLocation": "991:3:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -855,8 +834,7 @@
             "functionSelector": "e0bab4c4",
             "mutability": "mutable",
             "name": "DAI",
-            "nameLocation": "1060:3:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -900,8 +878,7 @@
             "functionSelector": "b0e4556f",
             "mutability": "mutable",
             "name": "FRAX",
-            "nameLocation": "1129:4:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -945,8 +922,7 @@
             "functionSelector": "eeb401a9",
             "mutability": "mutable",
             "name": "lendingRegistry",
-            "nameLocation": "1209:15:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1032,8 +1008,7 @@
             "functionSelector": "7dc0d1d0",
             "mutability": "mutable",
             "name": "oracle",
-            "nameLocation": "1400:6:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1077,8 +1052,7 @@
             "functionSelector": "bad1d3da",
             "mutability": "mutable",
             "name": "unitroller",
-            "nameLocation": "1472:10:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1122,8 +1096,7 @@
             "functionSelector": "36522b9b",
             "mutability": "mutable",
             "name": "usdcInterestRateModel",
-            "nameLocation": "1572:21:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1160,106 +1133,60 @@
             "visibility": "public"
           },
           {
-            "id": 21670,
+            "id": 21667,
             "nodeType": "VariableDeclaration",
-            "src": "1644:75:18",
+            "src": "1644:66:18",
             "constant": false,
             "functionSelector": "36f58588",
             "mutability": "mutable",
             "name": "recipe",
-            "nameLocation": "1659:6:18",
-            "scope": 21671,
+            "scope": 21668,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_IRecipe_$21600",
-              "typeString": "contract IRecipe"
+              "typeIdentifier": "t_address",
+              "typeString": "address"
             },
             "typeName": {
-              "id": 21666,
-              "nodeType": "UserDefinedTypeName",
-              "pathNode": {
-                "id": 21665,
-                "name": "IRecipe",
-                "nodeType": "IdentifierPath",
-                "referencedDeclaration": 21600,
-                "src": "1644:7:18"
-              },
-              "referencedDeclaration": 21600,
+              "id": 21665,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
               "src": "1644:7:18",
+              "stateMutability": "nonpayable",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IRecipe_$21600",
-                "typeString": "contract IRecipe"
+                "typeIdentifier": "t_address",
+                "typeString": "address"
               }
             },
             "value": {
-              "arguments": [
-                {
-                  "hexValue": "307836433963356664353142393563374246333635393535383637323638636532454332354465623542",
-                  "id": 21668,
-                  "isConstant": false,
-                  "isLValue": false,
-                  "isPure": true,
-                  "kind": "number",
-                  "lValueRequested": false,
-                  "nodeType": "Literal",
-                  "src": "1676:42:18",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "value": "0x6C9c5fd51B95c7BF365955867268ce2EC25Deb5B"
-                }
-              ],
-              "expression": {
-                "argumentTypes": [
-                  {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  }
-                ],
-                "id": 21667,
-                "name": "IRecipe",
-                "nodeType": "Identifier",
-                "overloadedDeclarations": [],
-                "referencedDeclaration": 21600,
-                "src": "1668:7:18",
-                "typeDescriptions": {
-                  "typeIdentifier": "t_type$_t_contract$_IRecipe_$21600_$",
-                  "typeString": "type(contract IRecipe)"
-                }
-              },
-              "id": 21669,
+              "hexValue": "307836433963356664353142393563374246333635393535383637323638636532454332354465623542",
+              "id": 21666,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
-              "kind": "typeConversion",
+              "kind": "number",
               "lValueRequested": false,
-              "names": [],
-              "nodeType": "FunctionCall",
-              "src": "1668:51:18",
-              "tryCall": false,
+              "nodeType": "Literal",
+              "src": "1668:42:18",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IRecipe_$21600",
-                "typeString": "contract IRecipe"
-              }
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              },
+              "value": "0x6C9c5fd51B95c7BF365955867268ce2EC25Deb5B"
             },
             "visibility": "public"
           }
         ],
         "abstract": false,
         "baseContracts": [],
-        "canonicalName": "Constants",
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          21671
+          21668
         ],
         "name": "Constants",
-        "nameLocation": "283:9:18",
-        "scope": 21672,
-        "usedErrors": []
+        "scope": 21669
       }
     ]
   }

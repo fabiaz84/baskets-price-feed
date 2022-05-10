@@ -27,7 +27,7 @@ contract MarketsTestingSuite is Test {
     Constants public const; 
     Cheats public cheats;
 
-    function setUp() public{
+    constructor(){
 	cheats = Cheats(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D);
         cheats.deal(address(this), 1000 ether);	
 
@@ -58,14 +58,19 @@ contract MarketsTestingSuite is Test {
             8);
 
 	bdSTBL = ICToken(deployCode("./bytecode/CErc20Delegator.json", args));
+
+	cheats.startPrank(unitroller.admin());
 	
  	//Set Basket Price feed in Oracle
 	IOracle(const.oracle()).setFeed(bdSTBL, address(basketFeed), 18);
 	
 	//Configure bdSTBL
+	emit log_named_uint("Checkpoint",0);
 	unitroller._supportMarket(bdSTBL);
+	emit log_named_uint("Checkpoint",0);
 	unitroller._setCollateralFactor(bdSTBL, 500000000000000000); //50%
 	unitroller._setIMFFactor(bdSTBL, 40000000000000000);
+	cheats.stopPrank();
 	bdSTBL._setReserveFactor(500000000000000000); //0.5 ether
     }
 
@@ -82,13 +87,17 @@ contract MarketsTestingSuite is Test {
     }
 
     function mintBasket(address _basket, uint _mintAmount) public {
-	IRecipe recipe = const.recipe();
+	emit log_named_uint("Checkpoint",0);
+	emit log_named_address("Checkpoint",address(this));
+	address btbka = const.bSTBL();
+/*	IRecipe recipe = IRecipe(const.recipe());
+	emit log_named_uint("Checkpoint",1);
 
         //GET Best DEX Prices
 	(uint256 mintPrice, uint16[] memory dexIndices) = recipe.getPricePie(_basket, _mintAmount);
 	//Mint Basket tokens
 	payable(address(recipe)).transfer(mintPrice);
-	recipe.toPie(_basket, _mintAmount, dexIndices);        
+	recipe.toPie(_basket, _mintAmount, dexIndices);*/        
     }
 
     function depositCollateral(ICToken _dbToken, uint _collateralAmount, bool _joinMarket) public {
