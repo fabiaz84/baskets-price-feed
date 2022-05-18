@@ -15,6 +15,7 @@ contract Constants {
     ICToken public bdETH = ICToken(0xF635fdF9B36b557bD281aa02fdfaeBEc04CD084A);
 
     address public bSTBL = 0x5ee08f40b637417bcC9d2C51B62F4820ec9cF5D8;
+    address public bUSD = 0x7945b0A6674b175695e5d1D08aE1e6F13744Abb0;
 
     address public aRAI = 0xc9BC48c72154ef3e5425641a3c747242112a46AF;
     address public aFEI = 0x683923dB55Fead99A79Fa01A27EeC3cB19679cC3;
@@ -25,6 +26,11 @@ contract Constants {
     address public FEI = 0x956F47F50A910163D8BF957Cf5846D573E7f87CA;
     address public DAI = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
     address public FRAX = 0x853d955aCEf822Db058eb8505911ED77F175b99e;
+
+    address public RAIFeed = 0x483d36F6a1d063d580c7a24F9A42B346f3a69fbb;
+    address public FEIFeed = 0x31e0a88fecB6eC0a411DBe0e9E76391498296EE9;
+    address public DAIFeed = 0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9;
+    address public FRAXFeed = 0xB9E1E3A9feFf48998E45Fa90847ed4D467E8BcfD;  
 
     ILendingRegistry public lendingRegistry = ILendingRegistry(0x08a2b7D713e388123dc6678168656659d297d397);
 

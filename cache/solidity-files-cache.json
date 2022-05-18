@@ -9,8 +9,41 @@
     ]
   },
   "files": {
+    "/home/freshpizza/git-repos/baskets-price-feed/lib/forge-std/lib/ds-test/src/test.sol": {
+      "lastModificationDate": 1652183152620,
+      "contentHash": "82a8604fe648c30a9bd56444368704f0",
+      "sourceName": "lib/forge-std/lib/ds-test/src/test.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {}
+    },
     "/home/freshpizza/git-repos/baskets-price-feed/lib/forge-std/src/Test.sol": {
-      "lastModificationDate": 1651836949185,
+      "lastModificationDate": 1652182921550,
       "contentHash": "5ab1042e2f48572d8317ed14f159682b",
       "sourceName": "lib/forge-std/src/Test.sol",
       "solcConfig": {
@@ -39,10 +72,10 @@
         }
       },
       "imports": [
+        "lib/forge-std/lib/ds-test/src/test.sol",
         "lib/forge-std/src/Vm.sol",
         "lib/forge-std/src/console.sol",
-        "lib/forge-std/src/console2.sol",
-        "lib/solmate/lib/ds-test/src/test.sol"
+        "lib/forge-std/src/console2.sol"
       ],
       "versionRequirement": ">=0.6.0, <0.9.0",
       "artifacts": {}
@@ -315,9 +348,86 @@
       "versionRequirement": ">=0.5.0",
       "artifacts": {}
     },
+    "/home/freshpizza/git-repos/baskets-price-feed/lib/solmate/src/test/utils/DSTestPlus.sol": {
+      "lastModificationDate": 1652182921710,
+      "contentHash": "21968072143c9b9ad6c8921664b4e995",
+      "sourceName": "lib/solmate/src/test/utils/DSTestPlus.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/forge-std/lib/ds-test/src/test.sol",
+        "lib/solmate/src/test/utils/Hevm.sol"
+      ],
+      "versionRequirement": ">=0.8.0",
+      "artifacts": {
+        "DSTestPlus": {
+          "0.8.1+commit.df193b15.Linux.gcc": "DSTestPlus.sol/DSTestPlus.json"
+        }
+      }
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/lib/solmate/src/test/utils/Hevm.sol": {
+      "lastModificationDate": 1652182921710,
+      "contentHash": "60742aa83f930a4226fbe7676f06b607",
+      "sourceName": "lib/solmate/src/test/utils/Hevm.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.8.0",
+      "artifacts": {
+        "Hevm": {
+          "0.8.1+commit.df193b15.Linux.gcc": "Hevm.sol/Hevm.json"
+        }
+      }
+    },
     "/home/freshpizza/git-repos/baskets-price-feed/src/BasketsPriceFeed.sol": {
-      "lastModificationDate": 1651781672125,
-      "contentHash": "aa09648ea7b29d4f49a39f02e221b8c6",
+      "lastModificationDate": 1652620580932,
+      "contentHash": "4b9f5a67f1f01b69d0e582aac6a4e62f",
       "sourceName": "src/BasketsPriceFeed.sol",
       "solcConfig": {
         "settings": {
@@ -355,7 +465,11 @@
         "src/Interfaces/ILendingRegistry.sol"
       ],
       "versionRequirement": "^0.8.0",
-      "artifacts": {}
+      "artifacts": {
+        "BasketsPriceFeed": {
+          "0.8.1+commit.df193b15.Linux.gcc": "BasketsPriceFeed.sol/BasketsPriceFeed.json"
+        }
+      }
     },
     "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IBasketFacet.sol": {
       "lastModificationDate": 1651779341655,
@@ -391,7 +505,7 @@
       "artifacts": {}
     },
     "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ICToken.sol": {
-      "lastModificationDate": 1651843060115,
+      "lastModificationDate": 1652182609120,
       "contentHash": "ba9bcdee638b60018ef25fdd3832efc1",
       "sourceName": "src/Interfaces/ICToken.sol",
       "solcConfig": {
@@ -421,11 +535,7 @@
       },
       "imports": [],
       "versionRequirement": "^0.8.0",
-      "artifacts": {
-        "ICToken": {
-          "0.8.1+commit.df193b15.Linux.gcc": "ICToken.sol/ICToken.json"
-        }
-      }
+      "artifacts": {}
     },
     "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IChainLinkOracle.sol": {
       "lastModificationDate": 1651781610485,
@@ -461,8 +571,8 @@
       "artifacts": {}
     },
     "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IComptroller.sol": {
-      "lastModificationDate": 1652169466694,
-      "contentHash": "9e998e52e155b5e68c3de0e39df8289a",
+      "lastModificationDate": 1652538811986,
+      "contentHash": "4a50b434108fd815914687c8b6fb961a",
       "sourceName": "src/Interfaces/IComptroller.sol",
       "solcConfig": {
         "settings": {
@@ -496,6 +606,43 @@
       "artifacts": {
         "IComptroller": {
           "0.8.1+commit.df193b15.Linux.gcc": "IComptroller.sol/IComptroller.json"
+        }
+      }
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IFeed.sol": {
+      "lastModificationDate": 1652883921156,
+      "contentHash": "2a9621641cade4e9ebf468ec4d37b49f",
+      "sourceName": "src/Interfaces/IFeed.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IFeed": {
+          "0.8.1+commit.df193b15.Linux.gcc": "IFeed.sol/IFeed.json"
         }
       }
     },
@@ -566,7 +713,7 @@
       "artifacts": {}
     },
     "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IOracle.sol": {
-      "lastModificationDate": 1651839158835,
+      "lastModificationDate": 1652607418541,
       "contentHash": "6964545a835dcad99498df735975d77d",
       "sourceName": "src/Interfaces/IOracle.sol",
       "solcConfig": {
@@ -638,8 +785,8 @@
       "artifacts": {}
     },
     "/home/freshpizza/git-repos/baskets-price-feed/test/Constants.sol": {
-      "lastModificationDate": 1652168143464,
-      "contentHash": "f3d5a23a883408eb0a34a9e318f074aa",
+      "lastModificationDate": 1652626341982,
+      "contentHash": "34eb6fb2603e073115eed68ed8d9d658",
       "sourceName": "test/Constants.sol",
       "solcConfig": {
         "settings": {
@@ -680,8 +827,8 @@
       }
     },
     "/home/freshpizza/git-repos/baskets-price-feed/test/MarketsTestingSuite.sol": {
-      "lastModificationDate": 1652172320554,
-      "contentHash": "3ebd46eb2fbacb2ae895bd65509ca3ea",
+      "lastModificationDate": 1652884574376,
+      "contentHash": "937a4e1629b6fad2a48d44ab4c506ee0",
       "sourceName": "test/MarketsTestingSuite.sol",
       "solcConfig": {
         "settings": {
@@ -709,6 +856,7 @@
         }
       },
       "imports": [
+        "lib/forge-std/lib/ds-test/src/test.sol",
         "lib/forge-std/src/Test.sol",
         "lib/forge-std/src/Vm.sol",
         "lib/forge-std/src/console.sol",
@@ -717,12 +865,12 @@
         "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
         "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
         "lib/openzeppelin-contracts/contracts/utils/Context.sol",
-        "lib/solmate/lib/ds-test/src/test.sol",
         "src/BasketsPriceFeed.sol",
         "src/Interfaces/IBasketFacet.sol",
         "src/Interfaces/ICToken.sol",
         "src/Interfaces/IChainLinkOracle.sol",
         "src/Interfaces/IComptroller.sol",
+        "src/Interfaces/IFeed.sol",
         "src/Interfaces/ILendingLogic.sol",
         "src/Interfaces/ILendingRegistry.sol",
         "src/Interfaces/IOracle.sol",
@@ -740,8 +888,8 @@
       }
     },
     "/home/freshpizza/git-repos/baskets-price-feed/test/bSTBL/bSTBL.t.sol": {
-      "lastModificationDate": 1652168847984,
-      "contentHash": "1e3d559101a3b68e142e5d9d7a215772",
+      "lastModificationDate": 1652884721186,
+      "contentHash": "a9016798156b76d7b6fe202cd0522a99",
       "sourceName": "test/bSTBL/bSTBL.t.sol",
       "solcConfig": {
         "settings": {
@@ -769,6 +917,7 @@
         }
       },
       "imports": [
+        "lib/forge-std/lib/ds-test/src/test.sol",
         "lib/forge-std/src/Test.sol",
         "lib/forge-std/src/Vm.sol",
         "lib/forge-std/src/console.sol",
@@ -777,12 +926,14 @@
         "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
         "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
         "lib/openzeppelin-contracts/contracts/utils/Context.sol",
-        "lib/solmate/lib/ds-test/src/test.sol",
+        "lib/solmate/src/test/utils/DSTestPlus.sol",
+        "lib/solmate/src/test/utils/Hevm.sol",
         "src/BasketsPriceFeed.sol",
         "src/Interfaces/IBasketFacet.sol",
         "src/Interfaces/ICToken.sol",
         "src/Interfaces/IChainLinkOracle.sol",
         "src/Interfaces/IComptroller.sol",
+        "src/Interfaces/IFeed.sol",
         "src/Interfaces/ILendingLogic.sol",
         "src/Interfaces/ILendingRegistry.sol",
         "src/Interfaces/IOracle.sol",

@@ -14,6 +14,9 @@ contract BasketsPriceFeed is Ownable {
     uint8 public constant decimals = 18;
     mapping(address => IChainLinkOracle) public linkFeeds;
 
+    event log_named_uint(string key, uint val);
+    event log_named_address(string key, address val);
+
     constructor (address _basket, address _lendingRegistry) {
         basket = IBasketFacet(_basket);
         lendingRegistry = ILendingRegistry(_lendingRegistry);
@@ -37,25 +40,22 @@ contract BasketsPriceFeed is Ownable {
             IChainLinkOracle linkFeed;
 
             if (underlying != address(0)) { // Wrapped tokens
-                ILendingLogic lendingLogic = ILendingLogic(address(uint160(uint256(lendingRegistry.wrappedToProtocol(component)))));
+                ILendingLogic lendingLogic = ILendingLogic(lendingRegistry.protocolToLogic(lendingRegistry.wrappedToProtocol(component)));
                 linkFeed = linkFeeds[underlying];
-
-                marketCapUSD += (
-                    fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether) *
-                    fmul(10 ** (18 - IERC20Metadata(address(componentToken)).decimals()), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
+		marketCapUSD += (
+		   fmul(fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether), 
+                   uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
                 );
             } else { // Non-wrapped tokens
                 linkFeed = linkFeeds[component];
-
                 marketCapUSD += (
-                    componentToken.balanceOf(address(basket)) *
-                    fmul(10 ** (18 - IERC20Metadata(address(componentToken)).decimals()), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
-                );
+                    fmul(componentToken.balanceOf(address(basket)),
+		    uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
+		);
             }
         }
-
-        usdPrice = fdiv(marketCapUSD, IERC20(address(basket)).totalSupply(), 1 ether);
-        return usdPrice;
+        usdPrice = fdiv(marketCapUSD, IERC20(address(basket)).totalSupply(), 1 ether);	
+	return usdPrice;
     }
 
     function setTokenFeed(address _token, address _oracle) external onlyOwner {

@@ -4,11 +4,27 @@ import {ICToken} from "./ICToken.sol";
 
 interface IComptroller{
 
-    function _setCollateralFactor(ICToken cToken, uint newCollateralFactorMantissa) external returns (uint);
+    struct Market {
+        bool isListed;
+
+        uint collateralFactorMantissa;
+		
+	uint imfFactorMantissa;
+
+        mapping(address => bool) accountMembership;
+
+        bool isComped;
+    }
+
+    function markets(address) external view returns(bool,uint,uint,bool);
+
+    function _setCollateralFactor(address cToken, uint newCollateralFactorMantissa) external returns (uint);
 
     function _setIMFFactor(ICToken cToken, uint newimfFactorMantissa) external returns (uint);
 
     function _supportMarket(ICToken cToken) external returns (uint);
 
     function admin() external view returns(address);
+
+    function getAccountLiquidity(address account) external view returns (uint, uint, uint);
 }

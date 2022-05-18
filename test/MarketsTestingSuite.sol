@@ -9,6 +9,8 @@ import {IERC20Metadata} from "@openzeppelin/token/ERC20/extensions/IERC20Metadat
 import {IERC20} from "@openzeppelin/token/ERC20/IERC20.sol";
 import {IOracle} from "../src/Interfaces/IOracle.sol";
 import {IComptroller} from "../src/Interfaces/IComptroller.sol";
+import {IFeed} from "../src/Interfaces/IFeed.sol";
+import {ILendingLogic} from "../src/Interfaces/ILendingLogic.sol";
 import "forge-std/Test.sol";
 
 interface Cheats {
@@ -33,7 +35,7 @@ contract MarketsTestingSuite is Test {
 
         const = new Constants();
 	setProtocolContracts();
-        deployBasketsPriceFeed();
+        setBasketsPriceFeeds();
 	createBasketMarket();
     }
 
@@ -42,36 +44,42 @@ contract MarketsTestingSuite is Test {
         unitroller = IComptroller(const.unitroller());
     }
 
-    function deployBasketsPriceFeed() public {
+    function setBasketsPriceFeeds() public {
 	//Deploy BasketCompatible Oracle
         basketFeed = new BasketsPriceFeed(const.bSTBL(), address(const.lendingRegistry()));
-    }
+	basketFeed.setTokenFeed(const.RAI(), const.RAIFeed());
+	basketFeed.setTokenFeed(const.FEI(), const.FEIFeed());
+	basketFeed.setTokenFeed(const.DAI(), const.DAIFeed());
+	basketFeed.setTokenFeed(const.FRAX(), const.FRAXFeed());
+   }
 
     function createBasketMarket() public {
-    	//Deploy bdSTBL
-	bytes memory args = abi.encode(const.bSTBL(),
-            const.unitroller(),
-            const.usdcInterestRateModel(),
+
+	bytes memory args = abi.encode(address(const.bSTBL()),
+            address(0x0Be1fdC1E87127c4fe7C05bAE6437e3cf90Bf8d8),
+            address(0x681Cf55f0276126FAD8842133C839AB4D607E729),
             200000000000000000,
             "bao deposited bSTBL",
             "bdSTBL",
-            8);
+            8,
+            address(0xDb3401beF8f66E7f6CD95984026c26a4F47eEe84),
+            ""
+	);
 
-	bdSTBL = ICToken(deployCode("./bytecode/CErc20Delegator.json", args));
+	address bdSTBLAddress = deployCode("./out/CERC20Delegator.sol/CERC20Delegator.json", args);   
+	bdSTBL = ICToken(bdSTBLAddress);
 
 	cheats.startPrank(unitroller.admin());
-	
- 	//Set Basket Price feed in Oracle
-	IOracle(const.oracle()).setFeed(bdSTBL, address(basketFeed), 18);
-	
+	cheats.deal(unitroller.admin(), 1000 ether);
+ 	
+	//Set Basket Price feed in Oracle
+	oracle.setFeed(bdSTBL, address(basketFeed), 18);
 	//Configure bdSTBL
-	emit log_named_uint("Checkpoint",0);
 	unitroller._supportMarket(bdSTBL);
-	emit log_named_uint("Checkpoint",0);
-	unitroller._setCollateralFactor(bdSTBL, 500000000000000000); //50%
+	unitroller._setCollateralFactor(address(bdSTBL), 500000000000000000); //50%
 	unitroller._setIMFFactor(bdSTBL, 40000000000000000);
 	cheats.stopPrank();
-	bdSTBL._setReserveFactor(500000000000000000); //0.5 ether
+	bdSTBL._setReserveFactor(500000000000000000); //0.5 ether  
     }
 
     function getBasketValue() public returns(uint){
@@ -87,17 +95,13 @@ contract MarketsTestingSuite is Test {
     }
 
     function mintBasket(address _basket, uint _mintAmount) public {
-	emit log_named_uint("Checkpoint",0);
-	emit log_named_address("Checkpoint",address(this));
-	address btbka = const.bSTBL();
-/*	IRecipe recipe = IRecipe(const.recipe());
-	emit log_named_uint("Checkpoint",1);
-
+	IRecipe recipe = IRecipe(const.recipe());
+        cheats.startPrank(msg.sender);
         //GET Best DEX Prices
 	(uint256 mintPrice, uint16[] memory dexIndices) = recipe.getPricePie(_basket, _mintAmount);
 	//Mint Basket tokens
-	payable(address(recipe)).transfer(mintPrice);
-	recipe.toPie(_basket, _mintAmount, dexIndices);*/        
+	recipe.toPie{value: mintPrice}(_basket, _mintAmount, dexIndices);        
+    	cheats.stopPrank();
     }
 
     function depositCollateral(ICToken _dbToken, uint _collateralAmount, bool _joinMarket) public {
@@ -109,7 +113,9 @@ contract MarketsTestingSuite is Test {
    }
 
     function borrowAssets(ICToken _borrowAsset, uint _borrowAmount) public {
-    	_borrowAsset.borrow(_borrowAmount);
+    	cheats.startPrank(msg.sender);
+ 	_borrowAsset.borrow(_borrowAmount);
+ 	cheats.stopPrank();
     }
 
     function repayBorrowed(ICToken _repayAsset, uint _repayAmount) public {
@@ -120,11 +126,27 @@ contract MarketsTestingSuite is Test {
     }
 
     function withdraw(ICToken _dbToken, uint _withdrawAmount, bool redeemUnderlying) public {
-    	if(redeemUnderlying){
+    	cheats.startPrank(msg.sender);
+	if(redeemUnderlying){
 	    _dbToken.redeemUnderlying(_withdrawAmount);
 	    return();
 	}
 	_dbToken.redeem(_withdrawAmount);
+        cheats.stopPrank();
     }
 
+    function transferBasketAssets(address _assetToMove, address _receiver, uint _amount) public {
+    	cheats.startPrank(const.bSTBL());
+	IERC20(_assetToMove).transfer(_receiver,_amount);
+	cheats.stopPrank();
+    }
+
+    function getValueOfLendAsset(address _wrappedToken, uint _amount) public returns(uint) {
+        bytes32 protocol = const.lendingRegistry().wrappedToProtocol(_wrappedToken);
+        address logicContract = const.lendingRegistry().protocolToLogic(protocol);
+        uint exchangeRate = ILendingLogic(logicContract).exchangeRate(_wrappedToken);
+        _amount = _amount * exchangeRate / 1e18;
+	uint price = IFeed(const.RAIFeed()).latestAnswer();	
+	return(_amount * price / IFeed(const.RAIFeed()).decimals());
+    }
 }
