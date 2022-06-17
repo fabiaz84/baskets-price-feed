@@ -106,6 +106,45 @@
     },
     {
       "inputs": [],
+      "name": "USDC",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "USDCFeed",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "aDAI",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "aFEI",
       "outputs": [
         {
@@ -145,7 +184,46 @@
     },
     {
       "inputs": [],
+      "name": "aUSDC",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "admin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "bSTBL",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "bSTBLLendingManager",
       "outputs": [
         {
           "internalType": "address",
@@ -197,19 +275,6 @@
     },
     {
       "inputs": [],
-      "name": "cDAI",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
       "name": "lendingRegistry",
       "outputs": [
         {
@@ -224,6 +289,19 @@
     {
       "inputs": [],
       "name": "oracle",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "raiCurvePool",
       "outputs": [
         {
           "internalType": "address",
@@ -275,42 +353,71 @@
     }
   ],
   "bytecode": {
-    "object": "0x6080604052600080546001600160a01b031990811673c0601094c0c88264ba285fef0a1b00ef13e793471790915560018054821673f635fdf9b36b557bd281aa02fdfaebec04cd084a179055600280548216735ee08f40b637417bcc9d2c51b62f4820ec9cf5d8179055600380548216737945b0a6674b175695e5d1d08ae1e6f13744abb017905560048054821673c9bc48c72154ef3e5425641a3c747242112a46af17905560058054821673683923db55fead99a79fa01a27eec3cb19679cc3179055600680548216735d3a536e4d6dbd6114cc1ead35777bab948e364317905560078054821673d4937682df3c8aef4fe912a96a74121c0829e6641790556008805482167303ab458634910aad20ef5f1c8ee96f1d6ac5491917905560098054821673956f47f50a910163d8bf957cf5846d573e7f87ca179055600a80548216736b175474e89094c44da98b954eedeac495271d0f179055600b8054821673853d955acef822db058eb8505911ed77f175b99e179055600c8054821673483d36f6a1d063d580c7a24f9a42b346f3a69fbb179055600d805482167331e0a88fecb6ec0a411dbe0e9e76391498296ee9179055600e8054821673aed0c38402a5d19df6e4c03f4e2dced6e29c1ee9179055600f8054821673b9e1e3a9feff48998e45fa90847ed4d467e8bcfd1790556010805482167308a2b7d713e388123dc6678168656659d297d39717905560118054821673ebdc2d2a203c17895be0dacdf539eefc710eafd8179055601280548216730be1fdc1e87127c4fe7c05bae6437e3cf90bf8d817905560138054821673681cf55f0276126fad8842133c839ab4d607e72917905560148054909116736c9c5fd51b95c7bf365955867268ce2ec25deb5b17905534801561029257600080fd5b5061037f806102a26000396000f3fe608060405234801561001057600080fd5b50600436106101375760003560e01c80638cf0e204116100b8578063e0bab4c41161007c578063e0bab4c4146101ca578063e861b152146101d2578063ed87b540146101da578063eeb401a9146101e2578063fb5f135d146101ea578063fe0a0a5d146101f257610137565b80638cf0e204146101a2578063b0e4556f146101aa578063ba41cea8146101b2578063bad1d3da146101ba578063dc99b69f146101c257610137565b80634ae9220d116100ff5780634ae9220d1461017a578063650e5f8d146101825780636f6941b91461018a5780637dc0d1d0146101925780638a1c4dbc1461019a57610137565b8063053363061461013c5780630f7dbfa31461015a5780630ff1f4481461016257806336522b9b1461016a57806336f5858814610172575b600080fd5b6101446101fa565b6040516101519190610335565b60405180910390f35b610144610209565b610144610218565b610144610227565b610144610236565b610144610245565b610144610254565b610144610263565b610144610272565b610144610281565b610144610290565b61014461029f565b6101446102ae565b6101446102bd565b6101446102cc565b6101446102db565b6101446102ea565b6101446102f9565b610144610308565b610144610317565b610144610326565b6000546001600160a01b031681565b6007546001600160a01b031681565b6003546001600160a01b031681565b6013546001600160a01b031681565b6014546001600160a01b031681565b600c546001600160a01b031681565b6004546001600160a01b031681565b6006546001600160a01b031681565b6011546001600160a01b031681565b6009546001600160a01b031681565b600d546001600160a01b031681565b600b546001600160a01b031681565b6005546001600160a01b031681565b6012546001600160a01b031681565b6008546001600160a01b031681565b600a546001600160a01b031681565b600e546001600160a01b031681565b600f546001600160a01b031681565b6010546001600160a01b031681565b6001546001600160a01b031681565b6002546001600160a01b031681565b6001600160a01b039190911681526020019056fea26469706673582212206d93e282902cee13e63d191c11bbbde04a151ebe37dafb812f98dcb3819de93564736f6c63430008010033",
-    "sourceMap": "274:1810:20:-:0;;;392:74;;;-1:-1:-1;;;;;;392:74:20;;;423:42;392:74;;;;;472;;;;503:42;472:74;;;553:65;;;;;576:42;553:65;;;624:64;;;;;646:42;624:64;;;695;;;;;717:42;695:64;;;765;;;;;787:42;765:64;;;835;;;;;857:42;835:64;;;905:65;;;;;928:42;905:65;;;977:63;;;;;998:42;977:63;;;1046;;;;;1067:42;1046:63;;;1115;;;;;1136:42;1115:63;;;1184:64;;;;;1206:42;1184:64;;;1255:67;;;;;1280:42;1255:67;;;1328;;;;;1353:42;1328:67;;;1401;;;;;1426:42;1401:67;;;1474:68;;;;;1500:42;1474:68;;;1551:102;;;;;1610:42;1551:102;;;1751:66;;;;;1775:42;1751:66;;;1823:70;;;;;1851:42;1823:70;;;1923:81;;;;;1962:42;1923:81;;;2010:66;;;;;;2034:42;2010:66;;;274:1810;;;;;;;;;;;;;;;;",
+    "object": "0x6080604052600080546001600160a01b031990811673c0601094c0c88264ba285fef0a1b00ef13e793471790915560018054821673f635fdf9b36b557bd281aa02fdfaebec04cd084a179055600280548216735ee08f40b637417bcc9d2c51b62f4820ec9cf5d8179055600380548216737945b0a6674b175695e5d1d08ae1e6f13744abb017905560048054821673bcca60bb61934080951369a648fb03df4f96263c17905560058054821673c9bc48c72154ef3e5425641a3c747242112a46af17905560068054821673683923db55fead99a79fa01a27eec3cb19679cc317905560078054821673028171bca77440897b824ca71d1c56cac55b68a317905560088054821673d4937682df3c8aef4fe912a96a74121c0829e66417905560098054821673a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48179055600a805482167303ab458634910aad20ef5f1c8ee96f1d6ac54919179055600b8054821673956f47f50a910163d8bf957cf5846d573e7f87ca179055600c80548216736b175474e89094c44da98b954eedeac495271d0f179055600d8054821673853d955acef822db058eb8505911ed77f175b99e179055600e80548216738fffffd4afb6115b954bd326cbe7b4ba576818f6179055600f8054821673483d36f6a1d063d580c7a24f9a42b346f3a69fbb1790556010805482167331e0a88fecb6ec0a411dbe0e9e76391498296ee917905560118054821673aed0c38402a5d19df6e4c03f4e2dced6e29c1ee917905560128054821673b9e1e3a9feff48998e45fa90847ed4d467e8bcfd17905560138054821673fc69e0a5823e2afcbeb8a35d33588360f1496a0017905560148054821673ebdc2d2a203c17895be0dacdf539eefc710eafd8179055601580548216730be1fdc1e87127c4fe7c05bae6437e3cf90bf8d817905560168054821673681cf55f0276126fad8842133c839ab4d607e72917905560178054821673ac0fe9f363c160c281c81ddc49d0aa8ce04c02eb1790556018805482167308a2b7d713e388123dc6678168656659d297d397179055601980548216735c0afef620f512e2fa65c765a72fa46f9a41c6bd179055601a805490911673618788357d0ebd8a37e763adab3bc575d54c2c7d17905534801561034657600080fd5b5061047b806103566000396000f3fe608060405234801561001057600080fd5b50600436106101a95760003560e01c80638cf0e204116100f9578063e989f81211610097578063f851a44011610071578063f851a4401461027c578063f85a201814610284578063fb5f135d1461028c578063fe0a0a5d14610294576101a9565b8063e989f81214610264578063ed87b5401461026c578063eeb401a914610274576101a9565b8063bad1d3da116100d3578063bad1d3da14610244578063dc99b69f1461024c578063e0bab4c414610254578063e861b1521461025c576101a9565b80638cf0e2041461022c578063b0e4556f14610234578063ba41cea81461023c576101a9565b8063446b900111610166578063650e5f8d11610140578063650e5f8d1461020c5780637dc0d1d01461021457806389a302711461021c5780638a1c4dbc14610224576101a9565b8063446b9001146101f45780634ae9220d146101fc578063559fda3314610204576101a9565b806305336306146101ae5780630f7dbfa3146101cc5780630ff1f448146101d45780631a38a4fb146101dc57806336522b9b146101e457806336f58588146101ec575b600080fd5b6101b661029c565b6040516101c39190610431565b60405180910390f35b6101b66102ab565b6101b66102ba565b6101b66102c9565b6101b66102d8565b6101b66102e7565b6101b66102f6565b6101b6610305565b6101b6610314565b6101b6610323565b6101b6610332565b6101b6610341565b6101b6610350565b6101b661035f565b6101b661036e565b6101b661037d565b6101b661038c565b6101b661039b565b6101b66103aa565b6101b66103b9565b6101b66103c8565b6101b66103d7565b6101b66103e6565b6101b66103f5565b6101b6610404565b6101b6610413565b6101b6610422565b6000546001600160a01b031681565b6008546001600160a01b031681565b6003546001600160a01b031681565b6007546001600160a01b031681565b6016546001600160a01b031681565b6017546001600160a01b031681565b600e546001600160a01b031681565b600f546001600160a01b031681565b6004546001600160a01b031681565b6005546001600160a01b031681565b6014546001600160a01b031681565b6009546001600160a01b031681565b600b546001600160a01b031681565b6010546001600160a01b031681565b600d546001600160a01b031681565b6006546001600160a01b031681565b6015546001600160a01b031681565b600a546001600160a01b031681565b600c546001600160a01b031681565b6011546001600160a01b031681565b601a546001600160a01b031681565b6012546001600160a01b031681565b6018546001600160a01b031681565b6013546001600160a01b031681565b6019546001600160a01b031681565b6001546001600160a01b031681565b6002546001600160a01b031681565b6001600160a01b039190911681526020019056fea26469706673582212206d3c2a0a10799f72e0522477088843115ad643b896c403c9025a2af90cb2054c64736f6c63430008010033",
+    "sourceMap": "274:2355:23:-:0;;;392:74;;;-1:-1:-1;;;;;;392:74:23;;;423:42;392:74;;;;;472;;;;503:42;472:74;;;553:65;;;;;576:42;553:65;;;624:64;;;;;646:42;624:64;;;695:65;;;;;718:42;695:65;;;766:64;;;;;788:42;766:64;;;836;;;;;858:42;836:64;;;906;;;;;928:42;906:64;;;976:65;;;;;999:42;976:65;;;1048:64;;;;;1070:42;1048:64;;;1118:63;;;;;1139:42;1118:63;;;1187;;;;;1208:42;1187:63;;;1256;;;;;1277:42;1256:63;;;1325:64;;;;;1347:42;1325:64;;;1396:68;;;;;1422:42;1396:68;;;1470:67;;;;;1495:42;1470:67;;;1543;;;;;1568:42;1543:67;;;1616;;;;;1641:42;1616:67;;;1689:68;;;;;1715:42;1689:68;;;1857:65;;;;;1880:42;1857:65;;;1928:66;;;;;1952:42;1928:66;;;2000:70;;;;;2028:42;2000:70;;;2100:81;;;;;2139:42;2100:81;;;2187:66;;;;;2211:42;2187:66;;;2259:102;;;;;2318:42;2259:102;;;2367:79;;;;;2404:42;2367:79;;;2548:72;;;;;;2578:42;2548:72;;;274:2355;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x608060405234801561001057600080fd5b50600436106101375760003560e01c80638cf0e204116100b8578063e0bab4c41161007c578063e0bab4c4146101ca578063e861b152146101d2578063ed87b540146101da578063eeb401a9146101e2578063fb5f135d146101ea578063fe0a0a5d146101f257610137565b80638cf0e204146101a2578063b0e4556f146101aa578063ba41cea8146101b2578063bad1d3da146101ba578063dc99b69f146101c257610137565b80634ae9220d116100ff5780634ae9220d1461017a578063650e5f8d146101825780636f6941b91461018a5780637dc0d1d0146101925780638a1c4dbc1461019a57610137565b8063053363061461013c5780630f7dbfa31461015a5780630ff1f4481461016257806336522b9b1461016a57806336f5858814610172575b600080fd5b6101446101fa565b6040516101519190610335565b60405180910390f35b610144610209565b610144610218565b610144610227565b610144610236565b610144610245565b610144610254565b610144610263565b610144610272565b610144610281565b610144610290565b61014461029f565b6101446102ae565b6101446102bd565b6101446102cc565b6101446102db565b6101446102ea565b6101446102f9565b610144610308565b610144610317565b610144610326565b6000546001600160a01b031681565b6007546001600160a01b031681565b6003546001600160a01b031681565b6013546001600160a01b031681565b6014546001600160a01b031681565b600c546001600160a01b031681565b6004546001600160a01b031681565b6006546001600160a01b031681565b6011546001600160a01b031681565b6009546001600160a01b031681565b600d546001600160a01b031681565b600b546001600160a01b031681565b6005546001600160a01b031681565b6012546001600160a01b031681565b6008546001600160a01b031681565b600a546001600160a01b031681565b600e546001600160a01b031681565b600f546001600160a01b031681565b6010546001600160a01b031681565b6001546001600160a01b031681565b6002546001600160a01b031681565b6001600160a01b039190911681526020019056fea26469706673582212206d93e282902cee13e63d191c11bbbde04a151ebe37dafb812f98dcb3819de93564736f6c63430008010033",
-    "sourceMap": "274:1810:20:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;392:74;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;905:65;;;:::i;624:64::-;;;:::i;1923:81::-;;;:::i;2010:66::-;;;:::i;1255:67::-;;;:::i;695:64::-;;;:::i;835:::-;;;:::i;1751:66::-;;;:::i;1046:63::-;;;:::i;1328:67::-;;;:::i;1184:64::-;;;:::i;765:::-;;;:::i;1823:70::-;;;:::i;977:63::-;;;:::i;1115:::-;;;:::i;1401:67::-;;;:::i;1474:68::-;;;:::i;1551:102::-;;;:::i;472:74::-;;;:::i;553:65::-;;;:::i;392:74::-;;;-1:-1:-1;;;;;392:74:20;;:::o;905:65::-;;;-1:-1:-1;;;;;905:65:20;;:::o;624:64::-;;;-1:-1:-1;;;;;624:64:20;;:::o;1923:81::-;;;-1:-1:-1;;;;;1923:81:20;;:::o;2010:66::-;;;-1:-1:-1;;;;;2010:66:20;;:::o;1255:67::-;;;-1:-1:-1;;;;;1255:67:20;;:::o;695:64::-;;;-1:-1:-1;;;;;695:64:20;;:::o;835:::-;;;-1:-1:-1;;;;;835:64:20;;:::o;1751:66::-;;;-1:-1:-1;;;;;1751:66:20;;:::o;1046:63::-;;;-1:-1:-1;;;;;1046:63:20;;:::o;1328:67::-;;;-1:-1:-1;;;;;1328:67:20;;:::o;1184:64::-;;;-1:-1:-1;;;;;1184:64:20;;:::o;765:::-;;;-1:-1:-1;;;;;765:64:20;;:::o;1823:70::-;;;-1:-1:-1;;;;;1823:70:20;;:::o;977:63::-;;;-1:-1:-1;;;;;977:63:20;;:::o;1115:::-;;;-1:-1:-1;;;;;1115:63:20;;:::o;1401:67::-;;;-1:-1:-1;;;;;1401:67:20;;:::o;1474:68::-;;;-1:-1:-1;;;;;1474:68:20;;:::o;1551:102::-;;;-1:-1:-1;;;;;1551:102:20;;:::o;472:74::-;;;-1:-1:-1;;;;;472:74:20;;:::o;553:65::-;;;-1:-1:-1;;;;;553:65:20;;:::o;14:203:23:-;-1:-1:-1;;;;;178:32:23;;;;160:51;;148:2;133:18;;115:102::o",
+    "object": "0x608060405234801561001057600080fd5b50600436106101a95760003560e01c80638cf0e204116100f9578063e989f81211610097578063f851a44011610071578063f851a4401461027c578063f85a201814610284578063fb5f135d1461028c578063fe0a0a5d14610294576101a9565b8063e989f81214610264578063ed87b5401461026c578063eeb401a914610274576101a9565b8063bad1d3da116100d3578063bad1d3da14610244578063dc99b69f1461024c578063e0bab4c414610254578063e861b1521461025c576101a9565b80638cf0e2041461022c578063b0e4556f14610234578063ba41cea81461023c576101a9565b8063446b900111610166578063650e5f8d11610140578063650e5f8d1461020c5780637dc0d1d01461021457806389a302711461021c5780638a1c4dbc14610224576101a9565b8063446b9001146101f45780634ae9220d146101fc578063559fda3314610204576101a9565b806305336306146101ae5780630f7dbfa3146101cc5780630ff1f448146101d45780631a38a4fb146101dc57806336522b9b146101e457806336f58588146101ec575b600080fd5b6101b661029c565b6040516101c39190610431565b60405180910390f35b6101b66102ab565b6101b66102ba565b6101b66102c9565b6101b66102d8565b6101b66102e7565b6101b66102f6565b6101b6610305565b6101b6610314565b6101b6610323565b6101b6610332565b6101b6610341565b6101b6610350565b6101b661035f565b6101b661036e565b6101b661037d565b6101b661038c565b6101b661039b565b6101b66103aa565b6101b66103b9565b6101b66103c8565b6101b66103d7565b6101b66103e6565b6101b66103f5565b6101b6610404565b6101b6610413565b6101b6610422565b6000546001600160a01b031681565b6008546001600160a01b031681565b6003546001600160a01b031681565b6007546001600160a01b031681565b6016546001600160a01b031681565b6017546001600160a01b031681565b600e546001600160a01b031681565b600f546001600160a01b031681565b6004546001600160a01b031681565b6005546001600160a01b031681565b6014546001600160a01b031681565b6009546001600160a01b031681565b600b546001600160a01b031681565b6010546001600160a01b031681565b600d546001600160a01b031681565b6006546001600160a01b031681565b6015546001600160a01b031681565b600a546001600160a01b031681565b600c546001600160a01b031681565b6011546001600160a01b031681565b601a546001600160a01b031681565b6012546001600160a01b031681565b6018546001600160a01b031681565b6013546001600160a01b031681565b6019546001600160a01b031681565b6001546001600160a01b031681565b6002546001600160a01b031681565b6001600160a01b039190911681526020019056fea26469706673582212206d3c2a0a10799f72e0522477088843115ad643b896c403c9025a2af90cb2054c64736f6c63430008010033",
+    "sourceMap": "274:2355:23:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;392:74;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;976:65;;;:::i;624:64::-;;;:::i;906:::-;;;:::i;2100:81::-;;;:::i;2187:66::-;;;:::i;1396:68::-;;;:::i;1470:67::-;;;:::i;695:65::-;;;:::i;766:64::-;;;:::i;1928:66::-;;;:::i;1048:64::-;;;:::i;1187:63::-;;;:::i;1543:67::-;;;:::i;1325:64::-;;;:::i;836:::-;;;:::i;2000:70::-;;;:::i;1118:63::-;;;:::i;1256:::-;;;:::i;1616:67::-;;;:::i;2548:72::-;;;:::i;1689:68::-;;;:::i;2259:102::-;;;:::i;1857:65::-;;;:::i;2367:79::-;;;:::i;472:74::-;;;:::i;553:65::-;;;:::i;392:74::-;;;-1:-1:-1;;;;;392:74:23;;:::o;976:65::-;;;-1:-1:-1;;;;;976:65:23;;:::o;624:64::-;;;-1:-1:-1;;;;;624:64:23;;:::o;906:::-;;;-1:-1:-1;;;;;906:64:23;;:::o;2100:81::-;;;-1:-1:-1;;;;;2100:81:23;;:::o;2187:66::-;;;-1:-1:-1;;;;;2187:66:23;;:::o;1396:68::-;;;-1:-1:-1;;;;;1396:68:23;;:::o;1470:67::-;;;-1:-1:-1;;;;;1470:67:23;;:::o;695:65::-;;;-1:-1:-1;;;;;695:65:23;;:::o;766:64::-;;;-1:-1:-1;;;;;766:64:23;;:::o;1928:66::-;;;-1:-1:-1;;;;;1928:66:23;;:::o;1048:64::-;;;-1:-1:-1;;;;;1048:64:23;;:::o;1187:63::-;;;-1:-1:-1;;;;;1187:63:23;;:::o;1543:67::-;;;-1:-1:-1;;;;;1543:67:23;;:::o;1325:64::-;;;-1:-1:-1;;;;;1325:64:23;;:::o;836:::-;;;-1:-1:-1;;;;;836:64:23;;:::o;2000:70::-;;;-1:-1:-1;;;;;2000:70:23;;:::o;1118:63::-;;;-1:-1:-1;;;;;1118:63:23;;:::o;1256:::-;;;-1:-1:-1;;;;;1256:63:23;;:::o;1616:67::-;;;-1:-1:-1;;;;;1616:67:23;;:::o;2548:72::-;;;-1:-1:-1;;;;;2548:72:23;;:::o;1689:68::-;;;-1:-1:-1;;;;;1689:68:23;;:::o;2259:102::-;;;-1:-1:-1;;;;;2259:102:23;;:::o;1857:65::-;;;-1:-1:-1;;;;;1857:65:23;;:::o;2367:79::-;;;-1:-1:-1;;;;;2367:79:23;;:::o;472:74::-;;;-1:-1:-1;;;;;472:74:23;;:::o;553:65::-;;;-1:-1:-1;;;;;553:65:23;;:::o;14:203:26:-;-1:-1:-1;;;;;178:32:26;;;;160:51;;148:2;133:18;;115:102::o",
     "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "DAI()": "e0bab4c4",
+    "DAIFeed()": "e861b152",
+    "FEI()": "8a1c4dbc",
+    "FEIFeed()": "8cf0e204",
+    "FRAX()": "b0e4556f",
+    "FRAXFeed()": "ed87b540",
+    "RAI()": "dc99b69f",
+    "RAIFeed()": "4ae9220d",
+    "USDC()": "89a30271",
+    "USDCFeed()": "446b9001",
+    "aDAI()": "1a38a4fb",
+    "aFEI()": "ba41cea8",
+    "aFRAX()": "0f7dbfa3",
+    "aRAI()": "650e5f8d",
+    "aUSDC()": "559fda33",
+    "admin()": "f851a440",
+    "bSTBL()": "fe0a0a5d",
+    "bSTBLLendingManager()": "f85a2018",
+    "bUSD()": "0ff1f448",
+    "bdETH()": "fb5f135d",
+    "bdUSD()": "05336306",
+    "lendingRegistry()": "eeb401a9",
+    "oracle()": "7dc0d1d0",
+    "raiCurvePool()": "e989f812",
+    "recipe()": "36f58588",
+    "unitroller()": "bad1d3da",
+    "usdcInterestRateModel()": "36522b9b"
   },
   "ast": {
     "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/test/Constants.sol",
-    "id": 22416,
+    "id": 22491,
     "exportedSymbols": {
       "Constants": [
-        22415
+        22490
       ],
       "IBasketFacet": [
-        21837
+        21865
       ],
       "ICToken": [
-        21911
+        21939
       ],
       "ILendingRegistry": [
-        22240
+        22316
       ],
       "IRecipe": [
-        22332
+        22389
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "0:2085:20",
+    "src": "0:2630:23",
     "nodes": [
       {
-        "id": 22334,
+        "id": 22391,
         "nodeType": "PragmaDirective",
-        "src": "0:23:20",
+        "src": "0:23:23",
         "literals": [
           "solidity",
           "^",
@@ -319,21 +426,21 @@
         ]
       },
       {
-        "id": 22336,
+        "id": 22393,
         "nodeType": "ImportDirective",
-        "src": "25:54:20",
+        "src": "25:54:23",
         "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ICToken.sol",
         "file": "../src/Interfaces/ICToken.sol",
-        "scope": 22416,
-        "sourceUnit": 21912,
+        "scope": 22491,
+        "sourceUnit": 21940,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 22335,
+              "id": 22392,
               "name": "ICToken",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "src": "33:7:20",
+              "src": "33:7:23",
               "typeDescriptions": {}
             }
           }
@@ -341,21 +448,21 @@
         "unitAlias": ""
       },
       {
-        "id": 22338,
+        "id": 22395,
         "nodeType": "ImportDirective",
-        "src": "80:54:20",
+        "src": "80:54:23",
         "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IRecipe.sol",
         "file": "../src/Interfaces/IRecipe.sol",
-        "scope": 22416,
-        "sourceUnit": 22333,
+        "scope": 22491,
+        "sourceUnit": 22390,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 22337,
+              "id": 22394,
               "name": "IRecipe",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "src": "88:7:20",
+              "src": "88:7:23",
               "typeDescriptions": {}
             }
           }
@@ -363,21 +470,21 @@
         "unitAlias": ""
       },
       {
-        "id": 22340,
+        "id": 22397,
         "nodeType": "ImportDirective",
-        "src": "135:72:20",
+        "src": "135:72:23",
         "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ILendingRegistry.sol",
         "file": "../src/Interfaces/ILendingRegistry.sol",
-        "scope": 22416,
-        "sourceUnit": 22241,
+        "scope": 22491,
+        "sourceUnit": 22317,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 22339,
+              "id": 22396,
               "name": "ILendingRegistry",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "src": "143:16:20",
+              "src": "143:16:23",
               "typeDescriptions": {}
             }
           }
@@ -385,21 +492,21 @@
         "unitAlias": ""
       },
       {
-        "id": 22342,
+        "id": 22399,
         "nodeType": "ImportDirective",
-        "src": "208:64:20",
+        "src": "208:64:23",
         "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IBasketFacet.sol",
         "file": "../src/Interfaces/IBasketFacet.sol",
-        "scope": 22416,
-        "sourceUnit": 21838,
+        "scope": 22491,
+        "sourceUnit": 21866,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 22341,
+              "id": 22398,
               "name": "IBasketFacet",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "src": "216:12:20",
+              "src": "216:12:23",
               "typeDescriptions": {}
             }
           }
@@ -407,39 +514,39 @@
         "unitAlias": ""
       },
       {
-        "id": 22415,
+        "id": 22490,
         "nodeType": "ContractDefinition",
-        "src": "274:1810:20",
+        "src": "274:2355:23",
         "nodes": [
           {
-            "id": 22348,
+            "id": 22405,
             "nodeType": "VariableDeclaration",
-            "src": "392:74:20",
+            "src": "392:74:23",
             "constant": false,
             "functionSelector": "05336306",
             "mutability": "mutable",
             "name": "bdUSD",
-            "scope": 22415,
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ICToken_$21911",
+              "typeIdentifier": "t_contract$_ICToken_$21939",
               "typeString": "contract ICToken"
             },
             "typeName": {
-              "id": 22344,
+              "id": 22401,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 22343,
+                "id": 22400,
                 "name": "ICToken",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 21911,
-                "src": "392:7:20"
+                "referencedDeclaration": 21939,
+                "src": "392:7:23"
               },
-              "referencedDeclaration": 21911,
-              "src": "392:7:20",
+              "referencedDeclaration": 21939,
+              "src": "392:7:23",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ICToken_$21911",
+                "typeIdentifier": "t_contract$_ICToken_$21939",
                 "typeString": "contract ICToken"
               }
             },
@@ -447,14 +554,14 @@
               "arguments": [
                 {
                   "hexValue": "307863303630313039344330433838323634426132383566456630613162303065463133653739333437",
-                  "id": 22346,
+                  "id": 22403,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "423:42:20",
+                  "src": "423:42:23",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -469,18 +576,18 @@
                     "typeString": "address"
                   }
                 ],
-                "id": 22345,
+                "id": 22402,
                 "name": "ICToken",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 21911,
-                "src": "415:7:20",
+                "referencedDeclaration": 21939,
+                "src": "415:7:23",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_type$_t_contract$_ICToken_$21911_$",
+                  "typeIdentifier": "t_type$_t_contract$_ICToken_$21939_$",
                   "typeString": "type(contract ICToken)"
                 }
               },
-              "id": 22347,
+              "id": 22404,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -488,44 +595,44 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "415:51:20",
+              "src": "415:51:23",
               "tryCall": false,
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ICToken_$21911",
+                "typeIdentifier": "t_contract$_ICToken_$21939",
                 "typeString": "contract ICToken"
               }
             },
             "visibility": "public"
           },
           {
-            "id": 22354,
+            "id": 22411,
             "nodeType": "VariableDeclaration",
-            "src": "472:74:20",
+            "src": "472:74:23",
             "constant": false,
             "functionSelector": "fb5f135d",
             "mutability": "mutable",
             "name": "bdETH",
-            "scope": 22415,
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ICToken_$21911",
+              "typeIdentifier": "t_contract$_ICToken_$21939",
               "typeString": "contract ICToken"
             },
             "typeName": {
-              "id": 22350,
+              "id": 22407,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 22349,
+                "id": 22406,
                 "name": "ICToken",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 21911,
-                "src": "472:7:20"
+                "referencedDeclaration": 21939,
+                "src": "472:7:23"
               },
-              "referencedDeclaration": 21911,
-              "src": "472:7:20",
+              "referencedDeclaration": 21939,
+              "src": "472:7:23",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ICToken_$21911",
+                "typeIdentifier": "t_contract$_ICToken_$21939",
                 "typeString": "contract ICToken"
               }
             },
@@ -533,14 +640,14 @@
               "arguments": [
                 {
                   "hexValue": "307846363335666446394233366235353762443238316161303266646661654245633034434430383441",
-                  "id": 22352,
+                  "id": 22409,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "503:42:20",
+                  "src": "503:42:23",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -555,18 +662,18 @@
                     "typeString": "address"
                   }
                 ],
-                "id": 22351,
+                "id": 22408,
                 "name": "ICToken",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 21911,
-                "src": "495:7:20",
+                "referencedDeclaration": 21939,
+                "src": "495:7:23",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_type$_t_contract$_ICToken_$21911_$",
+                  "typeIdentifier": "t_type$_t_contract$_ICToken_$21939_$",
                   "typeString": "type(contract ICToken)"
                 }
               },
-              "id": 22353,
+              "id": 22410,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -574,24 +681,24 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "495:51:20",
+              "src": "495:51:23",
               "tryCall": false,
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ICToken_$21911",
+                "typeIdentifier": "t_contract$_ICToken_$21939",
                 "typeString": "contract ICToken"
               }
             },
             "visibility": "public"
           },
           {
-            "id": 22357,
+            "id": 22414,
             "nodeType": "VariableDeclaration",
-            "src": "553:65:20",
+            "src": "553:65:23",
             "constant": false,
             "functionSelector": "fe0a0a5d",
             "mutability": "mutable",
             "name": "bSTBL",
-            "scope": 22415,
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -599,10 +706,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22355,
+              "id": 22412,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "553:7:20",
+              "src": "553:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -611,14 +718,14 @@
             },
             "value": {
               "hexValue": "307835656530386634306236333734313762634339643243353142363246343832306563396346354438",
-              "id": 22356,
+              "id": 22413,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "576:42:20",
+              "src": "576:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -628,14 +735,14 @@
             "visibility": "public"
           },
           {
-            "id": 22360,
+            "id": 22417,
             "nodeType": "VariableDeclaration",
-            "src": "624:64:20",
+            "src": "624:64:23",
             "constant": false,
             "functionSelector": "0ff1f448",
             "mutability": "mutable",
             "name": "bUSD",
-            "scope": 22415,
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -643,10 +750,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22358,
+              "id": 22415,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "624:7:20",
+              "src": "624:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -655,14 +762,14 @@
             },
             "value": {
               "hexValue": "307837393435623041363637346231373536393565356431443038614531653646313337343441626230",
-              "id": 22359,
+              "id": 22416,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "646:42:20",
+              "src": "646:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -672,14 +779,14 @@
             "visibility": "public"
           },
           {
-            "id": 22363,
+            "id": 22420,
             "nodeType": "VariableDeclaration",
-            "src": "695:64:20",
+            "src": "695:65:23",
             "constant": false,
-            "functionSelector": "650e5f8d",
+            "functionSelector": "559fda33",
             "mutability": "mutable",
-            "name": "aRAI",
-            "scope": 22415,
+            "name": "aUSDC",
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -687,10 +794,54 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22361,
+              "id": 22418,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "695:7:20",
+              "src": "695:7:23",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "hexValue": "307842636361363062423631393334303830393531333639613634384662303344463446393632363343",
+              "id": 22419,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "718:42:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              },
+              "value": "0xBcca60bB61934080951369a648Fb03DF4F96263C"
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 22423,
+            "nodeType": "VariableDeclaration",
+            "src": "766:64:23",
+            "constant": false,
+            "functionSelector": "650e5f8d",
+            "mutability": "mutable",
+            "name": "aRAI",
+            "scope": 22490,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 22421,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "766:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -699,14 +850,14 @@
             },
             "value": {
               "hexValue": "307863394243343863373231353465663365353432353634316133633734373234323131326134364146",
-              "id": 22362,
+              "id": 22422,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "717:42:20",
+              "src": "788:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -716,14 +867,14 @@
             "visibility": "public"
           },
           {
-            "id": 22366,
+            "id": 22426,
             "nodeType": "VariableDeclaration",
-            "src": "765:64:20",
+            "src": "836:64:23",
             "constant": false,
             "functionSelector": "ba41cea8",
             "mutability": "mutable",
             "name": "aFEI",
-            "scope": 22415,
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -731,10 +882,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22364,
+              "id": 22424,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "765:7:20",
+              "src": "836:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -743,14 +894,14 @@
             },
             "value": {
               "hexValue": "307836383339323364423535466561643939413739466130314132374565433363423139363739634333",
-              "id": 22365,
+              "id": 22425,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "787:42:20",
+              "src": "858:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -760,14 +911,14 @@
             "visibility": "public"
           },
           {
-            "id": 22369,
+            "id": 22429,
             "nodeType": "VariableDeclaration",
-            "src": "835:64:20",
+            "src": "906:64:23",
             "constant": false,
-            "functionSelector": "6f6941b9",
+            "functionSelector": "1a38a4fb",
             "mutability": "mutable",
-            "name": "cDAI",
-            "scope": 22415,
+            "name": "aDAI",
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -775,10 +926,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22367,
+              "id": 22427,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "835:7:20",
+              "src": "906:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -786,32 +937,32 @@
               }
             },
             "value": {
-              "hexValue": "307835643361353336453444364462443631313463633145616433353737376241423934384533363433",
-              "id": 22368,
+              "hexValue": "307830323831373162434137373434303839374238323443613731443163353663614335356236384133",
+              "id": 22428,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "857:42:20",
+              "src": "928:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
               },
-              "value": "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643"
+              "value": "0x028171bCA77440897B824Ca71D1c56caC55b68A3"
             },
             "visibility": "public"
           },
           {
-            "id": 22372,
+            "id": 22432,
             "nodeType": "VariableDeclaration",
-            "src": "905:65:20",
+            "src": "976:65:23",
             "constant": false,
             "functionSelector": "0f7dbfa3",
             "mutability": "mutable",
             "name": "aFRAX",
-            "scope": 22415,
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -819,10 +970,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22370,
+              "id": 22430,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "905:7:20",
+              "src": "976:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -831,14 +982,14 @@
             },
             "value": {
               "hexValue": "307864343933373638326466334338614546344645393132413936413734313231433038323945363634",
-              "id": 22371,
+              "id": 22431,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "928:42:20",
+              "src": "999:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -848,14 +999,14 @@
             "visibility": "public"
           },
           {
-            "id": 22375,
+            "id": 22435,
             "nodeType": "VariableDeclaration",
-            "src": "977:63:20",
+            "src": "1048:64:23",
             "constant": false,
-            "functionSelector": "dc99b69f",
+            "functionSelector": "89a30271",
             "mutability": "mutable",
-            "name": "RAI",
-            "scope": 22415,
+            "name": "USDC",
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -863,10 +1014,54 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22373,
+              "id": 22433,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "977:7:20",
+              "src": "1048:7:23",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "hexValue": "307841306238363939316336323138623336633164313944346132653945623063453336303665423438",
+              "id": 22434,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1070:42:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              },
+              "value": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 22438,
+            "nodeType": "VariableDeclaration",
+            "src": "1118:63:23",
+            "constant": false,
+            "functionSelector": "dc99b69f",
+            "mutability": "mutable",
+            "name": "RAI",
+            "scope": 22490,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 22436,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1118:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -875,14 +1070,14 @@
             },
             "value": {
               "hexValue": "307830336162343538363334393130416144323065463566314338656539364631443661633534393139",
-              "id": 22374,
+              "id": 22437,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "998:42:20",
+              "src": "1139:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -892,14 +1087,14 @@
             "visibility": "public"
           },
           {
-            "id": 22378,
+            "id": 22441,
             "nodeType": "VariableDeclaration",
-            "src": "1046:63:20",
+            "src": "1187:63:23",
             "constant": false,
             "functionSelector": "8a1c4dbc",
             "mutability": "mutable",
             "name": "FEI",
-            "scope": 22415,
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -907,10 +1102,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22376,
+              "id": 22439,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "1046:7:20",
+              "src": "1187:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -919,14 +1114,14 @@
             },
             "value": {
               "hexValue": "307839353646343746353041393130313633443842463935374366353834364435373345376638374341",
-              "id": 22377,
+              "id": 22440,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1067:42:20",
+              "src": "1208:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -936,14 +1131,14 @@
             "visibility": "public"
           },
           {
-            "id": 22381,
+            "id": 22444,
             "nodeType": "VariableDeclaration",
-            "src": "1115:63:20",
+            "src": "1256:63:23",
             "constant": false,
             "functionSelector": "e0bab4c4",
             "mutability": "mutable",
             "name": "DAI",
-            "scope": 22415,
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -951,10 +1146,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22379,
+              "id": 22442,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "1115:7:20",
+              "src": "1256:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -963,14 +1158,14 @@
             },
             "value": {
               "hexValue": "307836423137353437344538393039344334344461393862393534456564654143343935323731643046",
-              "id": 22380,
+              "id": 22443,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1136:42:20",
+              "src": "1277:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -980,14 +1175,14 @@
             "visibility": "public"
           },
           {
-            "id": 22384,
+            "id": 22447,
             "nodeType": "VariableDeclaration",
-            "src": "1184:64:20",
+            "src": "1325:64:23",
             "constant": false,
             "functionSelector": "b0e4556f",
             "mutability": "mutable",
             "name": "FRAX",
-            "scope": 22415,
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -995,10 +1190,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22382,
+              "id": 22445,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "1184:7:20",
+              "src": "1325:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -1007,14 +1202,14 @@
             },
             "value": {
               "hexValue": "307838353364393535614345663832324462303538656238353035393131454437374631373562393965",
-              "id": 22383,
+              "id": 22446,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1206:42:20",
+              "src": "1347:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -1024,14 +1219,14 @@
             "visibility": "public"
           },
           {
-            "id": 22387,
+            "id": 22450,
             "nodeType": "VariableDeclaration",
-            "src": "1255:67:20",
+            "src": "1396:68:23",
             "constant": false,
-            "functionSelector": "4ae9220d",
+            "functionSelector": "446b9001",
             "mutability": "mutable",
-            "name": "RAIFeed",
-            "scope": 22415,
+            "name": "USDCFeed",
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1039,10 +1234,54 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22385,
+              "id": 22448,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "1255:7:20",
+              "src": "1396:7:23",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "hexValue": "307838664666466664344166423631313562393534426433323663626537423442413537363831386636",
+              "id": 22449,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1422:42:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              },
+              "value": "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6"
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 22453,
+            "nodeType": "VariableDeclaration",
+            "src": "1470:67:23",
+            "constant": false,
+            "functionSelector": "4ae9220d",
+            "mutability": "mutable",
+            "name": "RAIFeed",
+            "scope": 22490,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 22451,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1470:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -1051,14 +1290,14 @@
             },
             "value": {
               "hexValue": "307834383364333646366131643036336435383063376132344639413432423334366633613639666262",
-              "id": 22386,
+              "id": 22452,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1280:42:20",
+              "src": "1495:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -1068,14 +1307,14 @@
             "visibility": "public"
           },
           {
-            "id": 22390,
+            "id": 22456,
             "nodeType": "VariableDeclaration",
-            "src": "1328:67:20",
+            "src": "1543:67:23",
             "constant": false,
             "functionSelector": "8cf0e204",
             "mutability": "mutable",
             "name": "FEIFeed",
-            "scope": 22415,
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1083,10 +1322,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22388,
+              "id": 22454,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "1328:7:20",
+              "src": "1543:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -1095,14 +1334,14 @@
             },
             "value": {
               "hexValue": "307833316530613838666563423665433061343131444265306539453736333931343938323936454539",
-              "id": 22389,
+              "id": 22455,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1353:42:20",
+              "src": "1568:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -1112,14 +1351,14 @@
             "visibility": "public"
           },
           {
-            "id": 22393,
+            "id": 22459,
             "nodeType": "VariableDeclaration",
-            "src": "1401:67:20",
+            "src": "1616:67:23",
             "constant": false,
             "functionSelector": "e861b152",
             "mutability": "mutable",
             "name": "DAIFeed",
-            "scope": 22415,
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1127,10 +1366,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22391,
+              "id": 22457,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "1401:7:20",
+              "src": "1616:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -1139,14 +1378,14 @@
             },
             "value": {
               "hexValue": "307841656430633338343032613564313964663645346330334634453244636544366532396331656539",
-              "id": 22392,
+              "id": 22458,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1426:42:20",
+              "src": "1641:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -1156,14 +1395,14 @@
             "visibility": "public"
           },
           {
-            "id": 22396,
+            "id": 22462,
             "nodeType": "VariableDeclaration",
-            "src": "1474:68:20",
+            "src": "1689:68:23",
             "constant": false,
             "functionSelector": "ed87b540",
             "mutability": "mutable",
             "name": "FRAXFeed",
-            "scope": 22415,
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1171,10 +1410,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22394,
+              "id": 22460,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "1474:7:20",
+              "src": "1689:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -1183,14 +1422,14 @@
             },
             "value": {
               "hexValue": "307842394531453341396665466634383939384534354661393038343765643444343637453842636644",
-              "id": 22395,
+              "id": 22461,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1500:42:20",
+              "src": "1715:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
@@ -1200,34 +1439,254 @@
             "visibility": "public"
           },
           {
-            "id": 22402,
+            "id": 22465,
             "nodeType": "VariableDeclaration",
-            "src": "1551:102:20",
+            "src": "1857:65:23",
+            "constant": false,
+            "functionSelector": "f851a440",
+            "mutability": "mutable",
+            "name": "admin",
+            "scope": 22490,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 22463,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1857:7:23",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "hexValue": "307846433639653061353832334532416643424562386133356433333538383336304631343936613030",
+              "id": 22464,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1880:42:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              },
+              "value": "0xFC69e0a5823E2AfCBEb8a35d33588360F1496a00"
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 22468,
+            "nodeType": "VariableDeclaration",
+            "src": "1928:66:23",
+            "constant": false,
+            "functionSelector": "7dc0d1d0",
+            "mutability": "mutable",
+            "name": "oracle",
+            "scope": 22490,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 22466,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1928:7:23",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "hexValue": "307845626443324432613230336331373839354265306461436466353339656546433731306561466438",
+              "id": 22467,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1952:42:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              },
+              "value": "0xEbdC2D2a203c17895Be0daCdf539eeFC710eaFd8"
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 22471,
+            "nodeType": "VariableDeclaration",
+            "src": "2000:70:23",
+            "constant": false,
+            "functionSelector": "bad1d3da",
+            "mutability": "mutable",
+            "name": "unitroller",
+            "scope": 22490,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 22469,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "2000:7:23",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "hexValue": "307830426531666443314538373132376334666537433035624145363433376533636639304266386438",
+              "id": 22470,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "2028:42:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              },
+              "value": "0x0Be1fdC1E87127c4fe7C05bAE6437e3cf90Bf8d8"
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 22474,
+            "nodeType": "VariableDeclaration",
+            "src": "2100:81:23",
+            "constant": false,
+            "functionSelector": "36522b9b",
+            "mutability": "mutable",
+            "name": "usdcInterestRateModel",
+            "scope": 22490,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 22472,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "2100:7:23",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "hexValue": "307836383143663535663032373631323646414438383432313333433833394142344436303745373239",
+              "id": 22473,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "2139:42:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              },
+              "value": "0x681Cf55f0276126FAD8842133C839AB4D607E729"
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 22477,
+            "nodeType": "VariableDeclaration",
+            "src": "2187:66:23",
+            "constant": false,
+            "functionSelector": "36f58588",
+            "mutability": "mutable",
+            "name": "recipe",
+            "scope": 22490,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 22475,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "2187:7:23",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "hexValue": "307861633066453946333633633136306332383163383144644334396430414138634530344330324562",
+              "id": 22476,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "2211:42:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              },
+              "value": "0xac0fE9F363c160c281c81DdC49d0AA8cE04C02Eb"
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 22483,
+            "nodeType": "VariableDeclaration",
+            "src": "2259:102:23",
             "constant": false,
             "functionSelector": "eeb401a9",
             "mutability": "mutable",
             "name": "lendingRegistry",
-            "scope": 22415,
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ILendingRegistry_$22240",
+              "typeIdentifier": "t_contract$_ILendingRegistry_$22316",
               "typeString": "contract ILendingRegistry"
             },
             "typeName": {
-              "id": 22398,
+              "id": 22479,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 22397,
+                "id": 22478,
                 "name": "ILendingRegistry",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 22240,
-                "src": "1551:16:20"
+                "referencedDeclaration": 22316,
+                "src": "2259:16:23"
               },
-              "referencedDeclaration": 22240,
-              "src": "1551:16:20",
+              "referencedDeclaration": 22316,
+              "src": "2259:16:23",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ILendingRegistry_$22240",
+                "typeIdentifier": "t_contract$_ILendingRegistry_$22316",
                 "typeString": "contract ILendingRegistry"
               }
             },
@@ -1235,14 +1694,14 @@
               "arguments": [
                 {
                   "hexValue": "307830386132623744373133653338383132336463363637383136383635363635396432393764333937",
-                  "id": 22400,
+                  "id": 22481,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "1610:42:20",
+                  "src": "2318:42:23",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
                     "typeString": "address"
@@ -1257,18 +1716,18 @@
                     "typeString": "address"
                   }
                 ],
-                "id": 22399,
+                "id": 22480,
                 "name": "ILendingRegistry",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 22240,
-                "src": "1593:16:20",
+                "referencedDeclaration": 22316,
+                "src": "2301:16:23",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_type$_t_contract$_ILendingRegistry_$22240_$",
+                  "typeIdentifier": "t_type$_t_contract$_ILendingRegistry_$22316_$",
                   "typeString": "type(contract ILendingRegistry)"
                 }
               },
-              "id": 22401,
+              "id": 22482,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -1276,24 +1735,24 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "1593:60:20",
+              "src": "2301:60:23",
               "tryCall": false,
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ILendingRegistry_$22240",
+                "typeIdentifier": "t_contract$_ILendingRegistry_$22316",
                 "typeString": "contract ILendingRegistry"
               }
             },
             "visibility": "public"
           },
           {
-            "id": 22405,
+            "id": 22486,
             "nodeType": "VariableDeclaration",
-            "src": "1751:66:20",
+            "src": "2367:79:23",
             "constant": false,
-            "functionSelector": "7dc0d1d0",
+            "functionSelector": "f85a2018",
             "mutability": "mutable",
-            "name": "oracle",
-            "scope": 22415,
+            "name": "bSTBLLendingManager",
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1301,10 +1760,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22403,
+              "id": 22484,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "1751:7:20",
+              "src": "2367:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -1312,32 +1771,32 @@
               }
             },
             "value": {
-              "hexValue": "307845626443324432613230336331373839354265306461436466353339656546433731306561466438",
-              "id": 22404,
+              "hexValue": "307835433041664566363230663531326532464136354337363541373266613436663941343143364244",
+              "id": 22485,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1775:42:20",
+              "src": "2404:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
               },
-              "value": "0xEbdC2D2a203c17895Be0daCdf539eeFC710eaFd8"
+              "value": "0x5C0AfEf620f512e2FA65C765A72fa46f9A41C6BD"
             },
             "visibility": "public"
           },
           {
-            "id": 22408,
+            "id": 22489,
             "nodeType": "VariableDeclaration",
-            "src": "1823:70:20",
+            "src": "2548:72:23",
             "constant": false,
-            "functionSelector": "bad1d3da",
+            "functionSelector": "e989f812",
             "mutability": "mutable",
-            "name": "unitroller",
-            "scope": 22415,
+            "name": "raiCurvePool",
+            "scope": 22490,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1345,10 +1804,10 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 22406,
+              "id": 22487,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "1823:7:20",
+              "src": "2548:7:23",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -1356,108 +1815,20 @@
               }
             },
             "value": {
-              "hexValue": "307830426531666443314538373132376334666537433035624145363433376533636639304266386438",
-              "id": 22407,
+              "hexValue": "307836313837383833353744304542643841333765373633414461623362633537354435346332433764",
+              "id": 22488,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1851:42:20",
+              "src": "2578:42:23",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
                 "typeString": "address"
               },
-              "value": "0x0Be1fdC1E87127c4fe7C05bAE6437e3cf90Bf8d8"
-            },
-            "visibility": "public"
-          },
-          {
-            "id": 22411,
-            "nodeType": "VariableDeclaration",
-            "src": "1923:81:20",
-            "constant": false,
-            "functionSelector": "36522b9b",
-            "mutability": "mutable",
-            "name": "usdcInterestRateModel",
-            "scope": 22415,
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_address",
-              "typeString": "address"
-            },
-            "typeName": {
-              "id": 22409,
-              "name": "address",
-              "nodeType": "ElementaryTypeName",
-              "src": "1923:7:20",
-              "stateMutability": "nonpayable",
-              "typeDescriptions": {
-                "typeIdentifier": "t_address",
-                "typeString": "address"
-              }
-            },
-            "value": {
-              "hexValue": "307836383143663535663032373631323646414438383432313333433833394142344436303745373239",
-              "id": 22410,
-              "isConstant": false,
-              "isLValue": false,
-              "isPure": true,
-              "kind": "number",
-              "lValueRequested": false,
-              "nodeType": "Literal",
-              "src": "1962:42:20",
-              "typeDescriptions": {
-                "typeIdentifier": "t_address",
-                "typeString": "address"
-              },
-              "value": "0x681Cf55f0276126FAD8842133C839AB4D607E729"
-            },
-            "visibility": "public"
-          },
-          {
-            "id": 22414,
-            "nodeType": "VariableDeclaration",
-            "src": "2010:66:20",
-            "constant": false,
-            "functionSelector": "36f58588",
-            "mutability": "mutable",
-            "name": "recipe",
-            "scope": 22415,
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_address",
-              "typeString": "address"
-            },
-            "typeName": {
-              "id": 22412,
-              "name": "address",
-              "nodeType": "ElementaryTypeName",
-              "src": "2010:7:20",
-              "stateMutability": "nonpayable",
-              "typeDescriptions": {
-                "typeIdentifier": "t_address",
-                "typeString": "address"
-              }
-            },
-            "value": {
-              "hexValue": "307836433963356664353142393563374246333635393535383637323638636532454332354465623542",
-              "id": 22413,
-              "isConstant": false,
-              "isLValue": false,
-              "isPure": true,
-              "kind": "number",
-              "lValueRequested": false,
-              "nodeType": "Literal",
-              "src": "2034:42:20",
-              "typeDescriptions": {
-                "typeIdentifier": "t_address",
-                "typeString": "address"
-              },
-              "value": "0x6C9c5fd51B95c7BF365955867268ce2EC25Deb5B"
+              "value": "0x618788357D0EBd8A37e763ADab3bc575D54c2C7d"
             },
             "visibility": "public"
           }
@@ -1468,11 +1839,12 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          22415
+          22490
         ],
         "name": "Constants",
-        "scope": 22416
+        "scope": 22491
       }
     ]
-  }
+  },
+  "id": 23
 }

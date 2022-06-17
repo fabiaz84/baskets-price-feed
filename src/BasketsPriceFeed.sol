@@ -38,24 +38,57 @@ contract BasketsPriceFeed is Ownable {
             address underlying = lendingRegistry.wrappedToUnderlying(component);
             IERC20 componentToken = IERC20(component);
             IChainLinkOracle linkFeed;
-
             if (underlying != address(0)) { // Wrapped tokens
                 ILendingLogic lendingLogic = ILendingLogic(lendingRegistry.protocolToLogic(lendingRegistry.wrappedToProtocol(component)));
                 linkFeed = linkFeeds[underlying];
-		marketCapUSD += (
-		   fmul(fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether), 
-                   uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
-                );
+		//emit log_named_uint("TokenValue", 0);
+		marketCapUSD += (fmul(fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals()));
             } else { // Non-wrapped tokens
                 linkFeed = linkFeeds[component];
-                marketCapUSD += (
-                    fmul(componentToken.balanceOf(address(basket)),
-		    uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
+		marketCapUSD += (
+		    componentToken.balanceOf(address(basket)) *
+                    fmul(10 ** (18 - IERC20Metadata(address(componentToken)).decimals()), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
 		);
             }
         }
         usdPrice = fdiv(marketCapUSD, IERC20(address(basket)).totalSupply(), 1 ether);	
 	return usdPrice;
+    }
+
+    function latestAnswerView() external returns (uint256 usdPrice) {
+        address[] memory components = basket.getTokens();
+
+        uint256 marketCapUSD = 0;
+
+        // Gather link prices, component balances, and basket market cap
+        for (uint8 i = 0; i < components.length; i++) {
+            address component = components[i];
+            address underlying = lendingRegistry.wrappedToUnderlying(component);
+            IERC20 componentToken = IERC20(component);
+            IChainLinkOracle linkFeed;
+            if (underlying != address(0)) { // Wrapped tokens
+                ILendingLogic lendingLogic = ILendingLogic(lendingRegistry.protocolToLogic(lendingRegistry.wrappedToProtocol(component)));
+                linkFeed = linkFeeds[underlying];
+		emit log_named_uint("In Basket RAI_AMOUNT: ", fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether));
+                emit log_named_uint("In Basket RAI_VALUE: ", fmul(fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals()));
+                
+
+		marketCapUSD += (
+                   fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether) *
+                   fmul(10 ** (18 - IERC20Metadata(address(componentToken)).decimals()), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
+                );
+            } else { // Non-wrapped tokens
+                linkFeed = linkFeeds[component];
+                marketCapUSD += (
+                    componentToken.balanceOf(address(basket)) *
+                    fmul(10 ** (18 - IERC20Metadata(address(componentToken)).decimals()), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
+                );
+            }
+        }
+	emit log_named_uint("In Basket MarketCap: ",marketCapUSD);
+        emit log_named_uint("InBasket Price : ", fdiv(marketCapUSD, IERC20(address(basket)).totalSupply(), 1 ether));
+        usdPrice = fdiv(marketCapUSD, IERC20(address(basket)).totalSupply(), 1 ether);
+        return usdPrice;
     }
 
     function setTokenFeed(address _token, address _oracle) external onlyOwner {

@@ -426,8 +426,8 @@
       }
     },
     "/home/freshpizza/git-repos/baskets-price-feed/src/BasketsPriceFeed.sol": {
-      "lastModificationDate": 1652620580932,
-      "contentHash": "4b9f5a67f1f01b69d0e582aac6a4e62f",
+      "lastModificationDate": 1655463893777,
+      "contentHash": "d1a2d041fae63f8ac19b301c00a5c814",
       "sourceName": "src/BasketsPriceFeed.sol",
       "solcConfig": {
         "settings": {
@@ -609,6 +609,43 @@
         }
       }
     },
+    "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ICurve.sol": {
+      "lastModificationDate": 1655365290255,
+      "contentHash": "35591e793addf1239b24211c0d9bf876",
+      "sourceName": "src/Interfaces/ICurve.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "ICurve": {
+          "0.8.1+commit.df193b15.Linux.gcc": "ICurve.sol/ICurve.json"
+        }
+      }
+    },
     "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IFeed.sol": {
       "lastModificationDate": 1652883921156,
       "contentHash": "2a9621641cade4e9ebf468ec4d37b49f",
@@ -678,6 +715,43 @@
       "imports": [],
       "versionRequirement": "^0.8.0",
       "artifacts": {}
+    },
+    "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ILendingManager.sol": {
+      "lastModificationDate": 1655371187865,
+      "contentHash": "cd6f085852dad054b084ce4d9e1f4fe8",
+      "sourceName": "src/Interfaces/ILendingManager.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "ILendingManager": {
+          "0.8.1+commit.df193b15.Linux.gcc": "ILendingManager.sol/ILendingManager.json"
+        }
+      }
     },
     "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ILendingRegistry.sol": {
       "lastModificationDate": 1651779219755,
@@ -752,8 +826,8 @@
       }
     },
     "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IRecipe.sol": {
-      "lastModificationDate": 1651778971585,
-      "contentHash": "92d3092a9d9c3fd14951d63aa4a1c156",
+      "lastModificationDate": 1654848180085,
+      "contentHash": "260269af0f96171c70b662734e2a1285",
       "sourceName": "src/Interfaces/IRecipe.sol",
       "solcConfig": {
         "settings": {
@@ -782,11 +856,15 @@
       },
       "imports": [],
       "versionRequirement": "^0.8.0",
-      "artifacts": {}
+      "artifacts": {
+        "IRecipe": {
+          "0.8.1+commit.df193b15.Linux.gcc": "IRecipe.sol/IRecipe.json"
+        }
+      }
     },
     "/home/freshpizza/git-repos/baskets-price-feed/test/Constants.sol": {
-      "lastModificationDate": 1652626341982,
-      "contentHash": "34eb6fb2603e073115eed68ed8d9d658",
+      "lastModificationDate": 1655371804045,
+      "contentHash": "a594d147ad1fdccc6575319201903dd5",
       "sourceName": "test/Constants.sol",
       "solcConfig": {
         "settings": {
@@ -827,8 +905,8 @@
       }
     },
     "/home/freshpizza/git-repos/baskets-price-feed/test/MarketsTestingSuite.sol": {
-      "lastModificationDate": 1652884574376,
-      "contentHash": "937a4e1629b6fad2a48d44ab4c506ee0",
+      "lastModificationDate": 1655387861808,
+      "contentHash": "35b6fe3862da5fc91dc8f1f0d0df2f27",
       "sourceName": "test/MarketsTestingSuite.sol",
       "solcConfig": {
         "settings": {
@@ -872,6 +950,7 @@
         "src/Interfaces/IComptroller.sol",
         "src/Interfaces/IFeed.sol",
         "src/Interfaces/ILendingLogic.sol",
+        "src/Interfaces/ILendingManager.sol",
         "src/Interfaces/ILendingRegistry.sol",
         "src/Interfaces/IOracle.sol",
         "src/Interfaces/IRecipe.sol",
@@ -888,8 +967,8 @@
       }
     },
     "/home/freshpizza/git-repos/baskets-price-feed/test/bSTBL/bSTBL.t.sol": {
-      "lastModificationDate": 1652884721186,
-      "contentHash": "a9016798156b76d7b6fe202cd0522a99",
+      "lastModificationDate": 1655462743157,
+      "contentHash": "f05e61e04c03c08ed78d1c1dd7df9113",
       "sourceName": "test/bSTBL/bSTBL.t.sol",
       "solcConfig": {
         "settings": {
@@ -933,8 +1012,10 @@
         "src/Interfaces/ICToken.sol",
         "src/Interfaces/IChainLinkOracle.sol",
         "src/Interfaces/IComptroller.sol",
+        "src/Interfaces/ICurve.sol",
         "src/Interfaces/IFeed.sol",
         "src/Interfaces/ILendingLogic.sol",
+        "src/Interfaces/ILendingManager.sol",
         "src/Interfaces/ILendingRegistry.sol",
         "src/Interfaces/IOracle.sol",
         "src/Interfaces/IRecipe.sol",

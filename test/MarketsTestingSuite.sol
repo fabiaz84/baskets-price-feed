@@ -11,6 +11,7 @@ import {IOracle} from "../src/Interfaces/IOracle.sol";
 import {IComptroller} from "../src/Interfaces/IComptroller.sol";
 import {IFeed} from "../src/Interfaces/IFeed.sol";
 import {ILendingLogic} from "../src/Interfaces/ILendingLogic.sol";
+import {ILendingManager} from "../src/Interfaces/ILendingManager.sol";
 import "forge-std/Test.sol";
 
 interface Cheats {
@@ -48,10 +49,9 @@ contract MarketsTestingSuite is Test {
 	//Deploy BasketCompatible Oracle
         basketFeed = new BasketsPriceFeed(const.bSTBL(), address(const.lendingRegistry()));
 	basketFeed.setTokenFeed(const.RAI(), const.RAIFeed());
-	basketFeed.setTokenFeed(const.FEI(), const.FEIFeed());
 	basketFeed.setTokenFeed(const.DAI(), const.DAIFeed());
-	basketFeed.setTokenFeed(const.FRAX(), const.FRAXFeed());
-   }
+	basketFeed.setTokenFeed(const.USDC(), const.USDCFeed());
+    }
 
     function createBasketMarket() public {
 
@@ -97,11 +97,11 @@ contract MarketsTestingSuite is Test {
     function mintBasket(address _basket, uint _mintAmount) public {
 	IRecipe recipe = IRecipe(const.recipe());
         cheats.startPrank(msg.sender);
-        //GET Best DEX Prices
-	(uint256 mintPrice, uint16[] memory dexIndices) = recipe.getPricePie(_basket, _mintAmount);
-	//Mint Basket tokens
-	recipe.toPie{value: mintPrice}(_basket, _mintAmount, dexIndices);        
-    	cheats.stopPrank();
+        uint256 mintPrice = recipe.getPriceEth(_basket, _mintAmount);
+        cheats.deal(address(this),mintPrice); 
+        //Mint Basket tokens
+	recipe.toBasket{value: mintPrice}(_basket, _mintAmount);        
+        cheats.stopPrank();
     }
 
     function depositCollateral(ICToken _dbToken, uint _collateralAmount, bool _joinMarket) public {
@@ -149,4 +149,14 @@ contract MarketsTestingSuite is Test {
 	uint price = IFeed(const.RAIFeed()).latestAnswer();	
 	return(_amount * price / IFeed(const.RAIFeed()).decimals());
     }
+
+    //Unlend bSTBL assets
+    function unlendBasketAsset(address wrappedAsset,uint256 unlendAmount) public {
+        cheats.startPrank(const.admin());
+	ILendingManager(const.bSTBLLendingManager()).unlend(wrappedAsset,unlendAmount);
+        cheats.stopPrank();
+    }
+
+    receive() external payable{}
+
 }
