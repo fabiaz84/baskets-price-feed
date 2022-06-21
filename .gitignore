@@ -1,4 +1,4 @@
 .env
-out
-cache
-broadcast
+out/
+cache/
+broadcast/
