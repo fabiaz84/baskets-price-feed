@@ -84,24 +84,30 @@
     "sourceMap": "",
     "linkReferences": {}
   },
+  "methodIdentifiers": {
+    "getUnderlyingPrice(address)": "fc57d4df",
+    "removeFixedPrice(address)": "1e922ea6",
+    "setFeed(address,address,uint8)": "ae10561b",
+    "setFixedPrice(address,uint256)": "1badc89a"
+  },
   "ast": {
-    "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IOracle.sol",
-    "id": 22278,
+    "absolutePath": "src/Interfaces/IOracle.sol",
+    "id": 23126,
     "exportedSymbols": {
       "ICToken": [
-        21911
+        22711
       ],
       "IOracle": [
-        22277
+        23125
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "0:384:18",
+    "src": "0:384:22",
     "nodes": [
       {
-        "id": 22242,
+        "id": 23090,
         "nodeType": "PragmaDirective",
-        "src": "0:23:18",
+        "src": "0:23:22",
         "literals": [
           "solidity",
           "^",
@@ -110,73 +116,78 @@
         ]
       },
       {
-        "id": 22244,
+        "id": 23092,
         "nodeType": "ImportDirective",
-        "src": "25:38:18",
-        "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/ICToken.sol",
+        "src": "25:38:22",
+        "absolutePath": "src/Interfaces/ICToken.sol",
         "file": "./ICToken.sol",
-        "scope": 22278,
-        "sourceUnit": 21912,
+        "nameLocation": "-1:-1:-1",
+        "scope": 23126,
+        "sourceUnit": 22712,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 22243,
+              "id": 23091,
               "name": "ICToken",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "src": "33:7:18",
+              "referencedDeclaration": 22711,
+              "src": "33:7:22",
               "typeDescriptions": {}
-            }
+            },
+            "nameLocation": "-1:-1:-1"
           }
         ],
         "unitAlias": ""
       },
       {
-        "id": 22277,
+        "id": 23125,
         "nodeType": "ContractDefinition",
-        "src": "65:317:18",
+        "src": "65:317:22",
         "nodes": [
           {
-            "id": 22254,
+            "id": 23102,
             "nodeType": "FunctionDefinition",
-            "src": "94:80:18",
+            "src": "94:80:22",
             "functionSelector": "ae10561b",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "setFeed",
+            "nameLocation": "103:7:22",
             "parameters": {
-              "id": 22252,
+              "id": 23100,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 22247,
+                  "id": 23095,
                   "mutability": "mutable",
                   "name": "cToken_",
+                  "nameLocation": "119:7:22",
                   "nodeType": "VariableDeclaration",
-                  "scope": 22254,
-                  "src": "111:15:18",
+                  "scope": 23102,
+                  "src": "111:15:22",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ICToken_$21911",
+                    "typeIdentifier": "t_contract$_ICToken_$22711",
                     "typeString": "contract ICToken"
                   },
                   "typeName": {
-                    "id": 22246,
+                    "id": 23094,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 22245,
+                      "id": 23093,
                       "name": "ICToken",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 21911,
-                      "src": "111:7:18"
+                      "referencedDeclaration": 22711,
+                      "src": "111:7:22"
                     },
-                    "referencedDeclaration": 21911,
-                    "src": "111:7:18",
+                    "referencedDeclaration": 22711,
+                    "src": "111:7:22",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ICToken_$21911",
+                      "typeIdentifier": "t_contract$_ICToken_$22711",
                       "typeString": "contract ICToken"
                     }
                   },
@@ -184,12 +195,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 22249,
+                  "id": 23097,
                   "mutability": "mutable",
                   "name": "feed_",
+                  "nameLocation": "136:5:22",
                   "nodeType": "VariableDeclaration",
-                  "scope": 22254,
-                  "src": "128:13:18",
+                  "scope": 23102,
+                  "src": "128:13:22",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -197,10 +209,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 22248,
+                    "id": 23096,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "128:7:18",
+                    "src": "128:7:22",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -211,12 +223,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 22251,
+                  "id": 23099,
                   "mutability": "mutable",
                   "name": "tokenDecimals_",
+                  "nameLocation": "149:14:22",
                   "nodeType": "VariableDeclaration",
-                  "scope": 22254,
-                  "src": "143:20:18",
+                  "scope": 23102,
+                  "src": "143:20:22",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -224,10 +237,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 22250,
+                    "id": 23098,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "143:5:18",
+                    "src": "143:5:22",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -236,60 +249,62 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "110:54:18"
+              "src": "110:54:22"
             },
             "returnParameters": {
-              "id": 22253,
+              "id": 23101,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "173:0:18"
+              "src": "173:0:22"
             },
-            "scope": 22277,
+            "scope": 23125,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 22262,
+            "id": 23110,
             "nodeType": "FunctionDefinition",
-            "src": "180:61:18",
+            "src": "180:61:22",
             "functionSelector": "1badc89a",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "setFixedPrice",
+            "nameLocation": "189:13:22",
             "parameters": {
-              "id": 22260,
+              "id": 23108,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 22257,
+                  "id": 23105,
                   "mutability": "mutable",
                   "name": "cToken_",
+                  "nameLocation": "211:7:22",
                   "nodeType": "VariableDeclaration",
-                  "scope": 22262,
-                  "src": "203:15:18",
+                  "scope": 23110,
+                  "src": "203:15:22",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ICToken_$21911",
+                    "typeIdentifier": "t_contract$_ICToken_$22711",
                     "typeString": "contract ICToken"
                   },
                   "typeName": {
-                    "id": 22256,
+                    "id": 23104,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 22255,
+                      "id": 23103,
                       "name": "ICToken",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 21911,
-                      "src": "203:7:18"
+                      "referencedDeclaration": 22711,
+                      "src": "203:7:22"
                     },
-                    "referencedDeclaration": 21911,
-                    "src": "203:7:18",
+                    "referencedDeclaration": 22711,
+                    "src": "203:7:22",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ICToken_$21911",
+                      "typeIdentifier": "t_contract$_ICToken_$22711",
                       "typeString": "contract ICToken"
                     }
                   },
@@ -297,12 +312,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 22259,
+                  "id": 23107,
                   "mutability": "mutable",
                   "name": "price",
+                  "nameLocation": "225:5:22",
                   "nodeType": "VariableDeclaration",
-                  "scope": 22262,
-                  "src": "220:10:18",
+                  "scope": 23110,
+                  "src": "220:10:22",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -310,10 +326,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 22258,
+                    "id": 23106,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "220:4:18",
+                    "src": "220:4:22",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -322,140 +338,145 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "202:29:18"
+              "src": "202:29:22"
             },
             "returnParameters": {
-              "id": 22261,
+              "id": 23109,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "240:0:18"
+              "src": "240:0:22"
             },
-            "scope": 22277,
+            "scope": 23125,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 22268,
+            "id": 23116,
             "nodeType": "FunctionDefinition",
-            "src": "247:52:18",
+            "src": "247:52:22",
             "functionSelector": "1e922ea6",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "removeFixedPrice",
+            "nameLocation": "256:16:22",
             "parameters": {
-              "id": 22266,
+              "id": 23114,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 22265,
+                  "id": 23113,
                   "mutability": "mutable",
                   "name": "cToken_",
+                  "nameLocation": "281:7:22",
                   "nodeType": "VariableDeclaration",
-                  "scope": 22268,
-                  "src": "273:15:18",
+                  "scope": 23116,
+                  "src": "273:15:22",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ICToken_$21911",
+                    "typeIdentifier": "t_contract$_ICToken_$22711",
                     "typeString": "contract ICToken"
                   },
                   "typeName": {
-                    "id": 22264,
+                    "id": 23112,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 22263,
+                      "id": 23111,
                       "name": "ICToken",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 21911,
-                      "src": "273:7:18"
+                      "referencedDeclaration": 22711,
+                      "src": "273:7:22"
                     },
-                    "referencedDeclaration": 21911,
-                    "src": "273:7:18",
+                    "referencedDeclaration": 22711,
+                    "src": "273:7:22",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ICToken_$21911",
+                      "typeIdentifier": "t_contract$_ICToken_$22711",
                       "typeString": "contract ICToken"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "272:17:18"
+              "src": "272:17:22"
             },
             "returnParameters": {
-              "id": 22267,
+              "id": 23115,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "298:0:18"
+              "src": "298:0:22"
             },
-            "scope": 22277,
+            "scope": 23125,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 22276,
+            "id": 23124,
             "nodeType": "FunctionDefinition",
-            "src": "305:74:18",
+            "src": "305:74:22",
             "functionSelector": "fc57d4df",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getUnderlyingPrice",
+            "nameLocation": "314:18:22",
             "parameters": {
-              "id": 22272,
+              "id": 23120,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 22271,
+                  "id": 23119,
                   "mutability": "mutable",
                   "name": "cToken_",
+                  "nameLocation": "341:7:22",
                   "nodeType": "VariableDeclaration",
-                  "scope": 22276,
-                  "src": "333:15:18",
+                  "scope": 23124,
+                  "src": "333:15:22",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ICToken_$21911",
+                    "typeIdentifier": "t_contract$_ICToken_$22711",
                     "typeString": "contract ICToken"
                   },
                   "typeName": {
-                    "id": 22270,
+                    "id": 23118,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 22269,
+                      "id": 23117,
                       "name": "ICToken",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 21911,
-                      "src": "333:7:18"
+                      "referencedDeclaration": 22711,
+                      "src": "333:7:22"
                     },
-                    "referencedDeclaration": 21911,
-                    "src": "333:7:18",
+                    "referencedDeclaration": 22711,
+                    "src": "333:7:22",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ICToken_$21911",
+                      "typeIdentifier": "t_contract$_ICToken_$22711",
                       "typeString": "contract ICToken"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "332:17:18"
+              "src": "332:17:22"
             },
             "returnParameters": {
-              "id": 22275,
+              "id": 23123,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 22274,
+                  "id": 23122,
                   "mutability": "mutable",
                   "name": "",
+                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 22276,
-                  "src": "373:4:18",
+                  "scope": 23124,
+                  "src": "373:4:22",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -463,10 +484,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 22273,
+                    "id": 23121,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "373:4:18",
+                    "src": "373:4:22",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -475,9 +496,9 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "372:6:18"
+              "src": "372:6:22"
             },
-            "scope": 22277,
+            "scope": 23125,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -485,15 +506,19 @@
         ],
         "abstract": false,
         "baseContracts": [],
+        "canonicalName": "IOracle",
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          22277
+          23125
         ],
         "name": "IOracle",
-        "scope": 22278
+        "nameLocation": "75:7:22",
+        "scope": 23126,
+        "usedErrors": []
       }
     ]
-  }
+  },
+  "id": 22
 }

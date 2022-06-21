@@ -37,21 +37,25 @@
     "sourceMap": "",
     "linkReferences": {}
   },
+  "methodIdentifiers": {
+    "decimals()": "313ce567",
+    "latestAnswer()": "50d25bcd"
+  },
   "ast": {
-    "absolutePath": "/home/freshpizza/git-repos/baskets-price-feed/src/Interfaces/IFeed.sol",
-    "id": 22090,
+    "absolutePath": "src/Interfaces/IFeed.sol",
+    "id": 22915,
     "exportedSymbols": {
       "IFeed": [
-        22089
+        22914
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "0:158:16",
+    "src": "0:158:18",
     "nodes": [
       {
-        "id": 22078,
+        "id": 22903,
         "nodeType": "PragmaDirective",
-        "src": "0:23:16",
+        "src": "0:23:18",
         "literals": [
           "solidity",
           "^",
@@ -60,37 +64,39 @@
         ]
       },
       {
-        "id": 22089,
+        "id": 22914,
         "nodeType": "ContractDefinition",
-        "src": "25:132:16",
+        "src": "25:132:18",
         "nodes": [
           {
-            "id": 22083,
+            "id": 22908,
             "nodeType": "FunctionDefinition",
-            "src": "47:50:16",
+            "src": "47:50:18",
             "functionSelector": "313ce567",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "decimals",
+            "nameLocation": "56:8:18",
             "parameters": {
-              "id": 22079,
+              "id": 22904,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "64:2:16"
+              "src": "64:2:18"
             },
             "returnParameters": {
-              "id": 22082,
+              "id": 22907,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 22081,
+                  "id": 22906,
                   "mutability": "mutable",
                   "name": "",
+                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 22083,
-                  "src": "90:5:16",
+                  "scope": 22908,
+                  "src": "90:5:18",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -98,10 +104,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 22080,
+                    "id": 22905,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "90:5:16",
+                    "src": "90:5:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -110,40 +116,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "89:7:16"
+              "src": "89:7:18"
             },
-            "scope": 22089,
+            "scope": 22914,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 22088,
+            "id": 22913,
             "nodeType": "FunctionDefinition",
-            "src": "102:53:16",
+            "src": "102:53:18",
             "functionSelector": "50d25bcd",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "latestAnswer",
+            "nameLocation": "111:12:18",
             "parameters": {
-              "id": 22084,
+              "id": 22909,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "123:2:16"
+              "src": "123:2:18"
             },
             "returnParameters": {
-              "id": 22087,
+              "id": 22912,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 22086,
+                  "id": 22911,
                   "mutability": "mutable",
                   "name": "",
+                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 22088,
-                  "src": "149:4:16",
+                  "scope": 22913,
+                  "src": "149:4:18",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -151,10 +159,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 22085,
+                    "id": 22910,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "149:4:16",
+                    "src": "149:4:18",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -163,9 +171,9 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "148:6:16"
+              "src": "148:6:18"
             },
-            "scope": 22089,
+            "scope": 22914,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -173,15 +181,19 @@
         ],
         "abstract": false,
         "baseContracts": [],
+        "canonicalName": "IFeed",
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          22089
+          22914
         ],
         "name": "IFeed",
-        "scope": 22090
+        "nameLocation": "35:5:18",
+        "scope": 22915,
+        "usedErrors": []
       }
     ]
-  }
+  },
+  "id": 18
 }
