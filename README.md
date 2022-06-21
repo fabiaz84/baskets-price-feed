@@ -2,7 +2,7 @@
 
 ## Enable bSTBL as Collateral localy
 
-## On Linux/Mac
+### On Linux/Mac
 
 1. run: 
 
@@ -16,7 +16,7 @@
 
 3. run anvil
 
-    `anvil --fork-url https://eth-mainnet.alchemyapi.io/v2/6Td86fh-K6eOm4l9wd-2mLDd90DHyq0K`
+    `anvil --fork-url https://eth-mainnet.alchemyapi.io/v2/xxxxxxxxxxx`
 
 4. Select one of the listed private keys and run the following in a second terminal:
 
