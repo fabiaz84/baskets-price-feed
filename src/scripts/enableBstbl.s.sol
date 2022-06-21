@@ -15,41 +15,42 @@ interface Cheats {
     function stopPrank() external;
 }
 
-contract bSTBLScript is Script, Test {
+contract bSTBLScript is Script {
 
     BasketsPriceFeed public basketFeed;
     Constants public const;
     IOracle public oracle;
     IComptroller public unitroller; 
     Cheats public cheats;
-    ICToken public bdSTBL;    
+    ICToken public bdSTBL;  
 
-/*
+
     constructor(){
-	cheats = Cheats(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D);
+	    cheats = Cheats(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D);
         cheats.deal(address(this), 1000 ether);	
-	cheats.deal(0x99E2D20ac8AF17B6e00F57F0ee46936F4A358B13, 1000 ether);
+	    cheats.deal(0x99E2D20ac8AF17B6e00F57F0ee46936F4A358B13, 1000 ether);
         const = new Constants();
-
-	setProtocolContracts();
+	    setProtocolContracts();
+        
     }
 
     function setProtocolContracts() public {
     	oracle = IOracle(const.oracle());
         unitroller = IComptroller(const.unitroller());
     }
-	*/
+	
     function run() external {
-	/*
+        
         vm.startBroadcast();
-	//Set Basket Price Feed
+        //Set Basket Price Feed
         basketFeed = new BasketsPriceFeed(const.bSTBL(), address(const.lendingRegistry()));
         basketFeed.setTokenFeed(const.RAI(), const.RAIFeed());
         basketFeed.setTokenFeed(const.DAI(), const.DAIFeed());
         basketFeed.setTokenFeed(const.USDC(), const.USDCFeed());
-	vm.stopBroadcast();
-	
-        bytes memory args = abi.encode(address(const.bSTBL()),
+        vm.stopBroadcast();
+
+        //Deploy dbToken contract for bSTBL
+        bytes memory dbTokenDeployArgs = abi.encode(address(const.bSTBL()),
             address(0x0Be1fdC1E87127c4fe7C05bAE6437e3cf90Bf8d8),
             address(0x681Cf55f0276126FAD8842133C839AB4D607E729),
             200000000000000000,
@@ -59,15 +60,23 @@ contract bSTBLScript is Script, Test {
             address(0xDb3401beF8f66E7f6CD95984026c26a4F47eEe84),
             ""
         );
-
-        address bdSTBLAddress = deployCode("./out/CERC20Delegator.sol/CERC20Delegator.json", args);
-	vm.stopBroadcast();
-
-	bdSTBL = ICToken(bdSTBLAddress);
+        bytes memory bytecode = abi.encodePacked(vm.getCode("./marketsCode/CERC20Delegator.sol/CERC20Delegator.json"), dbTokenDeployArgs);
+        address bdSTBLAddress;
+        vm.startBroadcast();
+        assembly {
+            bdSTBLAddress := create(0, add(bytecode, 0x20), mload(bytecode))
+        }
+	    vm.stopBroadcast();
+        require(
+            bdSTBLAddress != address(0),
+            "Test deployCode(string,bytes): Deployment failed."
+        );
+        
+	    bdSTBL = ICToken(bdSTBLAddress);
         cheats.startPrank(unitroller.admin());
         cheats.deal(unitroller.admin(), 1000 ether);
-
-   	vm.startBroadcast();
+        /*
+   	    vm.startBroadcast();
         //Set Basket Price feed in Oracle
         oracle.setFeed(bdSTBL, address(basketFeed), 18);
         //Configure bdSTBL
@@ -76,11 +85,11 @@ contract bSTBLScript is Script, Test {
         unitroller._setIMFFactor(bdSTBL, 40000000000000000);
         vm.stopBroadcast();
 	
-	cheats.stopPrank();
+        cheats.stopPrank();
 
-	vm.startBroadcast();
-	bdSTBL._setReserveFactor(500000000000000000); //0.5 ether
+        vm.startBroadcast();
+        bdSTBL._setReserveFactor(500000000000000000); //0.5 ether
         vm.stopBroadcast();
-	*/
+    */
     }
 }

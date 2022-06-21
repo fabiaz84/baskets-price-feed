@@ -8,6 +8,7 @@ import {IComptroller} from "../../src/Interfaces/IComptroller.sol";
 import {IOracle} from "../../src/Interfaces/IOracle.sol";
 import {IChainLinkOracle} from "../../src/Interfaces/IChainLinkOracle.sol";
 import {ICurve} from "../../src/Interfaces/ICurve.sol";
+import {IAAVE} from "../../src/Interfaces/IAAVE.sol";
 import "forge-std/Test.sol";
 import {DSTestPlus} from "solmate/test/utils/DSTestPlus.sol";
 
@@ -143,13 +144,13 @@ contract bSTBLTest is DSTestPlus {
         //emit log_named_uint("aRAI value: ", testingSuite.getValueOfLendAsset(const.aRAI(),raiAmount));
 
         //We remove assets from the basket, which should directly impact the price of the asset
-        testingSuite.basketFeed().latestAnswerView();
+
         //testingSuite.unlendBasketAsset(const.aRAI(),100000 ether);
 	uint raiAmount = IERC20(const.aRAI()).balanceOf(address(const.bSTBL())) / 2;
 	//emit log_named_uint("RAI_AMOUNT_TEST: ", raiAmount);
 	//emit log_named_uint("RAI_PRICE_TEST: ", uint256(IChainLinkOracle(const.RAIFeed()).latestAnswer()));
 	testingSuite.transferBasketAssets(const.aRAI(),address(this),raiAmount);		
-
+        testingSuite.basketFeed().latestAnswerView();
         uint raiValue = raiAmount * uint256(IChainLinkOracle(const.RAIFeed()).latestAnswer()) / 1e8;
 
 	uint bSTBLPriceAfter = IOracle(const.oracle()).getUnderlyingPrice(bdSTBL);
@@ -184,24 +185,44 @@ contract bSTBLTest is DSTestPlus {
         testingSuite.mintBasket(bSTBL,_mintAmount);
         uint bSTBLBalance = IERC20(bSTBL).balanceOf(address(this));
         uint totalbSTBLBalance = IERC20(bSTBL).totalSupply();
-
+        emit log_named_uint("Chackpoint : ", 0);
         //Depositing bSTBL as collateral
         testingSuite.depositCollateral(bdSTBL,bSTBLBalance,true);
         uint256 bSTBLPrice = IOracle(const.oracle()).getUnderlyingPrice(bdSTBL);
         uint collateralValue = bSTBLBalance * bSTBLPrice / 1e18;
-
+        emit log_named_uint("Chackpoint : ", 1);
         (,uint borrowingPowerBefore,) = IComptroller(const.unitroller()).getAccountLiquidity(address(this));
         testingSuite.borrowAssets(const.bdUSD(), borrowingPowerBefore);
         uint bUSDBalance = IERC20(const.bUSD()).balanceOf(address(this));
         (,,uint debtBefore) = IComptroller(const.unitroller()).getAccountLiquidity(address(this));
         uint raiAmount = IERC20(const.aRAI()).balanceOf(address(const.bSTBL())) / 2;
-
+        emit log_named_uint("Chackpoint : ", 2);
         //We remove assets from the basket, which should directly impact the price of the asset
         testingSuite.transferBasketAssets(const.aRAI(),address(this),raiAmount);
+        emit log_named_uint("Chackpoint : ", 3);
+        //Unlend aRAI
+        IAAVE(const.aaveLendingPool()).withdraw(const.RAI(),raiAmount,address(this));
+        emit log_named_uint("Chackpoint : ", 4);
+        //Swap RAI for DAI
+        uint RAIBalance = IERC20(const.RAI()).balanceOf(address(this));
+        IERC20(const.RAI()).approve(const.raiCurvePool(),RAIBalance);
+        emit log_named_uint("Chackpoint : ", 5);
+        ICurve(const.raiCurvePool()).exchange_underlying(0, 1, RAIBalance, 0);	
+        emit log_named_uint("Chackpoint : ", 6);
+        uint DAIBalance = IERC20(const.DAI()).balanceOf(address(this));
+        emit log_named_uint("DAI Balance : ", DAIBalance);
 
-	IERC20(const.RAI()).approve(const.raiCurvePool(),raiAmount);
-	uint256 outAmount = ICurve(const.raiCurvePool()).get_dy_underlying(0,1,raiAmount);	
-	emit log_named_uint("outAmount: ", outAmount);
+        //Lend DAI -> aDAI
+        IERC20(const.DAI()).approve(const.DAI(), DAIBalance);
+        emit log_named_uint("Chackpoint : ", 7);
+        IAAVE(const.aaveLendingPool()).deposit(const.DAI(), DAIBalance, address(this), 0);
+        emit log_named_uint("Chackpoint : ", 8);
+        IERC20(const.aDAI()).transfer(const.bSTBL(),DAIBalance);
+        emit log_named_uint("Chackpoint : ", 9);
+
+        uint256 bSTBLPriceAfterRebalance = IOracle(const.oracle()).getUnderlyingPrice(bdSTBL);
+        emit log_named_uint("bSTBL Price before Rebalance: ", bSTBLPrice);
+	emit log_named_uint("bSTBL Price after Rebalance: ", bSTBLPriceAfterRebalance);
     }
 
     receive() external payable{}

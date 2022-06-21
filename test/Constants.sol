@@ -51,5 +51,6 @@ contract Constants {
     //        Other        //
     /////////////////////////    
 
+    address public aaveLendingPool = 0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9;
     address public raiCurvePool = 0x618788357D0EBd8A37e763ADab3bc575D54c2C7d;      
 }
