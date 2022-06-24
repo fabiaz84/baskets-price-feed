@@ -48,9 +48,9 @@ contract MarketsTestingSuite is Test {
     function setBasketsPriceFeeds() public {
 	//Deploy BasketCompatible Oracle
         basketFeed = new BasketsPriceFeed(const.bSTBL(), address(const.lendingRegistry()));
-	basketFeed.setTokenFeed(const.RAI(), const.RAIFeed());
-	basketFeed.setTokenFeed(const.DAI(), const.DAIFeed());
-	basketFeed.setTokenFeed(const.USDC(), const.USDCFeed());
+        basketFeed.setTokenFeed(const.RAI(), const.RAIFeed());
+        basketFeed.setTokenFeed(const.DAI(), const.DAIFeed());
+        basketFeed.setTokenFeed(const.USDC(), const.USDCFeed());
     }
 
     function createBasketMarket() public {

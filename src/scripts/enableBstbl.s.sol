@@ -75,21 +75,19 @@ contract bSTBLScript is Script {
 	    bdSTBL = ICToken(bdSTBLAddress);
         cheats.startPrank(unitroller.admin());
         cheats.deal(unitroller.admin(), 1000 ether);
-        /*
-   	    vm.startBroadcast();
+        
+        
         //Set Basket Price feed in Oracle
         oracle.setFeed(bdSTBL, address(basketFeed), 18);
         //Configure bdSTBL
         unitroller._supportMarket(bdSTBL);
         unitroller._setCollateralFactor(address(bdSTBL), 500000000000000000); //50%
         unitroller._setIMFFactor(bdSTBL, 40000000000000000);
-        vm.stopBroadcast();
 	
         cheats.stopPrank();
-
+    
         vm.startBroadcast();
         bdSTBL._setReserveFactor(500000000000000000); //0.5 ether
         vm.stopBroadcast();
-    */
     }
 }
