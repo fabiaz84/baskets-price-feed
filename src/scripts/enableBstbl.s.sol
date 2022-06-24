@@ -1,10 +1,12 @@
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.1;
 
 import "forge-std/Script.sol";
 import "forge-std/Test.sol";
 import {IOracle} from "../Interfaces/IOracle.sol";
 import {IComptroller} from "../Interfaces/IComptroller.sol";
 import {ICToken} from "../Interfaces/ICToken.sol";
+import {IERC20} from "@openzeppelin/token/ERC20/IERC20.sol";
+import {IRecipe} from "../Interfaces/IRecipe.sol";
 import {Constants} from "../../test/Constants.sol";
 import {MarketsTestingSuite} from "../../test/MarketsTestingSuite.sol";
 import {BasketsPriceFeed} from "../BasketsPriceFeed.sol";
@@ -24,6 +26,9 @@ contract bSTBLScript is Script {
     Cheats public cheats;
     ICToken public bdSTBL;  
 
+    event log_named_uint(string key, uint val);
+    event log_named_address(string key, address val);
+
 
     constructor(){
 	    cheats = Cheats(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D);
@@ -31,7 +36,6 @@ contract bSTBLScript is Script {
 	    cheats.deal(0x99E2D20ac8AF17B6e00F57F0ee46936F4A358B13, 1000 ether);
         const = new Constants();
 	    setProtocolContracts();
-        
     }
 
     function setProtocolContracts() public {
@@ -89,5 +93,18 @@ contract bSTBLScript is Script {
         vm.startBroadcast();
         bdSTBL._setReserveFactor(500000000000000000); //0.5 ether
         vm.stopBroadcast();
+
+        //Mint bSTBL to script executor
+
+        address bSTBL = const.bSTBL();
+        IRecipe recipe = IRecipe(const.recipe());
+        uint256 mintPrice = recipe.getPriceEth(bSTBL, 100 ether);
+        cheats.startPrank(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266);
+        //Mint Basket tokens
+        recipe.toBasket{value: mintPrice}(bSTBL, 100 ether);
+        cheats.stopPrank();
+
+        emit log_named_address("bdSTBL Address: ", bdSTBLAddress);
+        emit log_named_uint("bSTBL Balance: ", IERC20(bSTBL).balanceOf(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266));
     }
 }

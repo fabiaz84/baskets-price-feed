@@ -137,12 +137,6 @@ contract bSTBLTest is DSTestPlus {
         testingSuite.borrowAssets(const.bdUSD(), borrowingPowerBefore);
         (,,uint debtBefore) = IComptroller(const.unitroller()).getAccountLiquidity(address(this));
 
-	//emit log_named_uint("DaiPrice: ",uint256(IChainLinkOracle(const.DAIFeed()).latestAnswer()));
-	//emit log_named_uint("USDCPrice: ",uint256(IChainLinkOracle(const.USDCFeed()).latestAnswer()));
-	//emit log_named_uint("RAIPrice: ",uint256(IChainLinkOracle(const.RAIFeed()).latestAnswer()));
-
-        //emit log_named_uint("aRAI value: ", testingSuite.getValueOfLendAsset(const.aRAI(),raiAmount));
-
         //We remove assets from the basket, which should directly impact the price of the asset
 
         //testingSuite.unlendBasketAsset(const.aRAI(),100000 ether);
@@ -166,13 +160,7 @@ contract bSTBLTest is DSTestPlus {
 	emit log_named_uint("bSTBLValueLoss: ", bSTBLValueLoss);
 	emit log_named_uint("rai Value removed: ", raiValue);
 	uint256 totalbSTBLValue = totalbSTBLBalance * bSTBLPrice / 1e28;
-	//emit log_named_uint("totalbSTBLValue", totalbSTBLValue);
-        //emit log_named_uint("bSTBLValueAfter", totalbSTBLBalance * bSTBLPriceAfter / 1e28);
-	//emit log_named_uint("removedValue", totalbSTBLValue - (totalbSTBLBalance * bSTBLPriceAfter / 1e28));
-        //emit log_named_uint("raiValue: ", raiValue);
-	//uint removedRaiProportion = raiValue * 1e8 / totalbSTBLValue;
-	//emit log_named_uint("raiValueProportion", removedRaiProportion);
-	
+
 	//Check that borrowing power decreased by the correct amount
 	//assertApproxEq(bSTBLValueLoss,borrowingPowerValueLoss,4);
 	
