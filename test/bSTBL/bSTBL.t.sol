@@ -149,7 +149,8 @@ contract bSTBLTest is DSTestPlus {
         uint borrowingPowerDelta = 1e18 - (((borrowingPowerAfter + debtAfter) * 1e18) / borrowingPowerBefore); 
         emit log_named_uint("bSTBLValueLoss: ", bSTBLValueLoss);
         emit log_named_uint("borrowingPowerDelta: ", borrowingPowerDelta);
-        assertApproxEq(bSTBLValueLoss,borrowingPowerDelta,9);
+        //Truncation in Comptroller leads to inaccuracies
+        assertApproxEq(bSTBLValueLoss,borrowingPowerDelta,20);
 
         //ACTUAL LIQUIDATION
         uint amountToLiquidate = (const.bdUSD().borrowBalanceStored(address(this))/2)-1;
