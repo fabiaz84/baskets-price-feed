@@ -55,9 +55,7 @@ contract bSTBLTest is DSTestPlus {
 	//calc expected borrowing power
 	uint expectedBorrowingPower = (IOracle(const.oracle()).getUnderlyingPrice(bdSTBL) * (_mintAmount / 2 )) / 1e18;
 	
-        assertLt(borrowingPower,expectedBorrowingPower+5);
-    	assertGt(borrowingPower,expectedBorrowingPower-5);	
-	//assertEq(borrowingPower,expectedBorrowingPower,"Actual Borrowing Power is not the same as the expected borrowing power");
+        assertApproxEq(borrowingPower,expectedBorrowingPower,5);
     }
 
     function testBorrowing() public {
@@ -137,34 +135,44 @@ contract bSTBLTest is DSTestPlus {
         testingSuite.borrowAssets(const.bdUSD(), borrowingPowerBefore);
         (,,uint debtBefore) = IComptroller(const.unitroller()).getAccountLiquidity(address(this));
 
-        //We remove assets from the basket, which should directly impact the price of the asset
-
-        //testingSuite.unlendBasketAsset(const.aRAI(),100000 ether);
-	uint raiAmount = IERC20(const.aRAI()).balanceOf(address(const.bSTBL())) / 2;
-	//emit log_named_uint("RAI_AMOUNT_TEST: ", raiAmount);
-	//emit log_named_uint("RAI_PRICE_TEST: ", uint256(IChainLinkOracle(const.RAIFeed()).latestAnswer()));
-	testingSuite.transferBasketAssets(const.aRAI(),address(this),raiAmount);		
+        //We remove assets from the basket, which directly impacts the price of bSTBL
         testingSuite.basketFeed().latestAnswerView();
-        uint raiValue = raiAmount * uint256(IChainLinkOracle(const.RAIFeed()).latestAnswer()) / 1e8;
+	uint raiAmount = IERC20(const.aRAI()).balanceOf(address(const.bSTBL())) / 3;
+	testingSuite.transferBasketAssets(const.aRAI(),address(this),raiAmount);
 
-	uint bSTBLPriceAfter = IOracle(const.oracle()).getUnderlyingPrice(bdSTBL);
-	//ToDo: check that this is equal to value of RAI removed
-	uint bSTBLValueLoss = (totalbSTBLBalance * bSTBLPrice / 1e18) - (totalbSTBLBalance * bSTBLPriceAfter / 1e18);
+        //Check that borrowing power was reduced by the right amount		
+        (,uint borrowingPowerAfter,uint debtAfter) = IComptroller(const.unitroller()).getAccountLiquidity(address(this));
+        uint bSTBLPriceAfter = IOracle(const.oracle()).getUnderlyingPrice(bdSTBL);
+        //% bSTBL price drop
+        uint bSTBLValueLoss = bSTBLPriceAfter * 1e18 / bSTBLPrice;
+        //% Borrowing power price drop
+        uint borrowingPowerDelta = 1e18 - (((borrowingPowerAfter + debtAfter) * 1e18) / borrowingPowerBefore); 
+        emit log_named_uint("bSTBLValueLoss: ", bSTBLValueLoss);
+        emit log_named_uint("borrowingPowerDelta: ", borrowingPowerDelta);
+        assertApproxEq(bSTBLValueLoss,borrowingPowerDelta,9);
 
-	(,uint borrowingPowerAfter,uint debtAfter) = IComptroller(const.unitroller()).getAccountLiquidity(address(this));
-
-	uint256 borrowingPowerValueLoss = debtAfter * 1e18 / borrowingPowerBefore;
-	emit log_named_uint("totalbSTBLBalance: ", totalbSTBLBalance);
-	emit log_named_uint("bSTBLPrice: ",bSTBLPrice);
-	emit log_named_uint("bSTBLPriceAfter: ", bSTBLPriceAfter);
-	emit log_named_uint("bSTBLValueLoss: ", bSTBLValueLoss);
-	emit log_named_uint("rai Value removed: ", raiValue);
-	uint256 totalbSTBLValue = totalbSTBLBalance * bSTBLPrice / 1e28;
-
-	//Check that borrowing power decreased by the correct amount
-	//assertApproxEq(bSTBLValueLoss,borrowingPowerValueLoss,4);
-	
-	//Repay Borrow
+        //ACTUAL LIQUIDATION
+        uint amountToLiquidate = (const.bdUSD().borrowBalanceStored(address(this))/2)-1;
+        testingSuite.mintBaoUSD(const.user1(), amountToLiquidate);
+	testingSuite.liquidateUser(address(this), const.user1(), amountToLiquidate, const.bdUSD(), bdSTBL);
+        (,,uint debtAfterLiquidation) = IComptroller(const.unitroller()).getAccountLiquidity(address(this));
+        //Check that new debt is 0
+        assertEq(debtAfterLiquidation, 0);
+        //Check that received amount is liquidation factor * repaid amount
+        uint receivedLiquidationReward = IERC20(address(bdSTBL)).balanceOf(const.user1());
+        uint liquidaitonIncentive = IComptroller(const.unitroller()).liquidationIncentiveMantissa();
+        (,uint CalcReceivedLiquidationReward) = IComptroller(const.unitroller()).liquidateCalculateSeizeTokens(address(const.bdUSD()), address(bdSTBL), amountToLiquidate);
+        //Check that liquidation amount is correct
+        assertEq(receivedLiquidationReward, CalcReceivedLiquidationReward - (CalcReceivedLiquidationReward * 2.8e16 /1e18));
+        //emit log_named_uint("receivedLiquidationReward: ", receivedLiquidationReward);
+        //emit log_named_uint("receivedLiquidationReward    : ", (bdSTBL.exchangeRateCurrent()*receivedLiquidationReward/1e18) * bSTBLPriceAfter / 1e18);
+        //emit log_named_uint("amountToLiquidate               : ", amountToLiquidate); 
+        //emit log_named_uint("receivedLiquidationReward       : ", receivedLiquidationReward);
+        //emit log_named_uint("bSTBLPriceAfter                 : ", bSTBLPriceAfter);
+        //emit log_named_uint("Exchange Rate                   : ", bdSTBL.exchangeRateCurrent());
+        //emit log_named_uint("actualReceivedLiquidationReward : ", (receivedLiquidationReward * bdSTBL.exchangeRateCurrent() / 1e18) * bSTBLPriceAfter / 1e18);
+        //emit log_named_uint("Profit                          : ", ((receivedLiquidationReward * bdSTBL.exchangeRateCurrent() / 1e18) * bSTBLPriceAfter / 1e18) - amountToLiquidate);
+        //emit log_named_uint("Ratio                           : ", (((receivedLiquidationReward * bdSTBL.exchangeRateCurrent() / 1e18) * bSTBLPriceAfter / 1e18) - amountToLiquidate)*1e18/amountToLiquidate);
     }
 
     function testRebalancing() public {
@@ -173,44 +181,50 @@ contract bSTBLTest is DSTestPlus {
         testingSuite.mintBasket(bSTBL,_mintAmount);
         uint bSTBLBalance = IERC20(bSTBL).balanceOf(address(this));
         uint totalbSTBLBalance = IERC20(bSTBL).totalSupply();
-        emit log_named_uint("Chackpoint : ", 0);
+
         //Depositing bSTBL as collateral
         testingSuite.depositCollateral(bdSTBL,bSTBLBalance,true);
         uint256 bSTBLPrice = IOracle(const.oracle()).getUnderlyingPrice(bdSTBL);
         uint collateralValue = bSTBLBalance * bSTBLPrice / 1e18;
-        emit log_named_uint("Chackpoint : ", 1);
+
         (,uint borrowingPowerBefore,) = IComptroller(const.unitroller()).getAccountLiquidity(address(this));
         testingSuite.borrowAssets(const.bdUSD(), borrowingPowerBefore);
         uint bUSDBalance = IERC20(const.bUSD()).balanceOf(address(this));
         (,,uint debtBefore) = IComptroller(const.unitroller()).getAccountLiquidity(address(this));
         uint raiAmount = IERC20(const.aRAI()).balanceOf(address(const.bSTBL())) / 2;
-        emit log_named_uint("Chackpoint : ", 2);
+
+        //Save aDAI and aRAI Balances before rebalancing for logging
+        uint oldDAIBalance = IERC20(const.aDAI()).balanceOf(const.bSTBL());
+        uint oldRAIBalance = IERC20(const.aRAI()).balanceOf(const.bSTBL());
+
         //We remove assets from the basket, which should directly impact the price of the asset
         testingSuite.transferBasketAssets(const.aRAI(),address(this),raiAmount);
-        emit log_named_uint("Chackpoint : ", 3);
+
         //Unlend aRAI
         IAAVE(const.aaveLendingPool()).withdraw(const.RAI(),raiAmount,address(this));
-        emit log_named_uint("Chackpoint : ", 4);
+
         //Swap RAI for DAI
         uint RAIBalance = IERC20(const.RAI()).balanceOf(address(this));
         IERC20(const.RAI()).approve(const.raiCurvePool(),RAIBalance);
-        emit log_named_uint("Chackpoint : ", 5);
         ICurve(const.raiCurvePool()).exchange_underlying(0, 1, RAIBalance, 0);	
-        emit log_named_uint("Chackpoint : ", 6);
         uint DAIBalance = IERC20(const.DAI()).balanceOf(address(this));
-        emit log_named_uint("DAI Balance : ", DAIBalance);
 
         //Lend DAI -> aDAI
-        IERC20(const.DAI()).approve(const.DAI(), DAIBalance);
-        emit log_named_uint("Chackpoint : ", 7);
+        IERC20(const.DAI()).approve(const.aaveLendingPool(), DAIBalance);
         IAAVE(const.aaveLendingPool()).deposit(const.DAI(), DAIBalance, address(this), 0);
-        emit log_named_uint("Chackpoint : ", 8);
+        
+        //Transfer aDAI into bSTBL
         IERC20(const.aDAI()).transfer(const.bSTBL(),DAIBalance);
-        emit log_named_uint("Chackpoint : ", 9);
 
         uint256 bSTBLPriceAfterRebalance = IOracle(const.oracle()).getUnderlyingPrice(bdSTBL);
         emit log_named_uint("bSTBL Price before Rebalance: ", bSTBLPrice);
 	emit log_named_uint("bSTBL Price after Rebalance: ", bSTBLPriceAfterRebalance);
+        //uint newDAIBalance = IERC20(const.aDAI()).balanceOf(const.bSTBL());
+        //uint newRAIBalance = IERC20(const.aRAI()).balanceOf(const.bSTBL());
+        //emit log_named_uint("New aDAI Balance : ", newDAIBalance);
+        //emit log_named_uint("Old aDAI Balance : ", oldDAIBalance);
+        //emit log_named_uint("New RAI Balance : ", newRAIBalance);
+        //emit log_named_uint("Old RAI Balance : ", oldRAIBalance);
     }
 
     receive() external payable{}

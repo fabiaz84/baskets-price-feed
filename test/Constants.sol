@@ -44,8 +44,18 @@ contract Constants {
     address public unitroller = 0x0Be1fdC1E87127c4fe7C05bAE6437e3cf90Bf8d8; //Comptroller interface
     address public usdcInterestRateModel = 0x681Cf55f0276126FAD8842133C839AB4D607E729;
     address public recipe = 0xac0fE9F363c160c281c81DdC49d0AA8cE04C02Eb;
+    address public fed = 0xD79046A1964F2C40B103Caac3fAe95BAa49E6624;
     ILendingRegistry public lendingRegistry = ILendingRegistry(0x08a2b7D713e388123dc6678168656659d297d397);
     address public bSTBLLendingManager = 0x5C0AfEf620f512e2FA65C765A72fa46f9A41C6BD;
+
+    /////////////////////////
+    //        Users        //
+    ///////////////////////// 
+
+    //Anvil addresses
+    address public user1 = 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266;
+    address public user2 = 0x70997970C51812dc3A010C7d01b50e0d17dc79C8;
+    address public user3 = 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC;
 
     /////////////////////////
     //        Other        //

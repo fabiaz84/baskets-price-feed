@@ -16,6 +16,10 @@ interface IComptroller{
         bool isComped;
     }
 
+    function liquidateCalculateSeizeTokens(address cTokenBorrowed, address cTokenCollateral, uint actualRepayAmount) external view returns (uint, uint);
+
+    function liquidationIncentiveMantissa() external view returns(uint);
+
     function markets(address) external view returns(bool,uint,uint,bool);
 
     function _setCollateralFactor(address cToken, uint newCollateralFactorMantissa) external returns (uint);

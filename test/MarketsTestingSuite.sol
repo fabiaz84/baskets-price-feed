@@ -10,6 +10,7 @@ import {IERC20} from "@openzeppelin/token/ERC20/IERC20.sol";
 import {IOracle} from "../src/Interfaces/IOracle.sol";
 import {IComptroller} from "../src/Interfaces/IComptroller.sol";
 import {IFeed} from "../src/Interfaces/IFeed.sol";
+import {IbUSD} from "../src/Interfaces/IbUSD.sol";
 import {ILendingLogic} from "../src/Interfaces/ILendingLogic.sol";
 import {ILendingManager} from "../src/Interfaces/ILendingManager.sol";
 import "forge-std/Test.sol";
@@ -66,7 +67,7 @@ contract MarketsTestingSuite is Test {
                 ""
         );
 
-        address bdSTBLAddress = deployCode("./out/CERC20Delegator.sol/CERC20Delegator.json", args);   
+        address bdSTBLAddress = deployCode("./marketsCode/CERC20Delegator.sol/CERC20Delegator.json", args);   
         bdSTBL = ICToken(bdSTBLAddress);
 
         cheats.startPrank(unitroller.admin());
@@ -128,17 +129,17 @@ contract MarketsTestingSuite is Test {
     function withdraw(ICToken _dbToken, uint _withdrawAmount, bool redeemUnderlying) public {
     	cheats.startPrank(msg.sender);
 	    if(redeemUnderlying){
-	    _dbToken.redeemUnderlying(_withdrawAmount);
-	    return();
-	}
+            _dbToken.redeemUnderlying(_withdrawAmount);
+            return();
+	    }
 	    _dbToken.redeem(_withdrawAmount);
         cheats.stopPrank();
     }
 
     function transferBasketAssets(address _assetToMove, address _receiver, uint _amount) public {
     	cheats.startPrank(const.bSTBL());
-	IERC20(_assetToMove).transfer(_receiver,_amount);
-	cheats.stopPrank();
+        IERC20(_assetToMove).transfer(_receiver,_amount);
+        cheats.stopPrank();
     }
 
     function getValueOfLendAsset(address _wrappedToken, uint _amount) public returns(uint) {
@@ -154,6 +155,20 @@ contract MarketsTestingSuite is Test {
     function unlendBasketAsset(address wrappedAsset,uint256 unlendAmount) public {
         cheats.startPrank(const.admin());
 	    ILendingManager(const.bSTBLLendingManager()).unlend(wrappedAsset,unlendAmount);
+        cheats.stopPrank();
+    }
+
+    function mintBaoUSD(address _receiver, uint _amount) public {
+        cheats.startPrank(const.fed());
+        IbUSD(const.bUSD()).mint(_receiver, _amount);
+        cheats.stopPrank();
+    }
+
+    function liquidateUser(address _userGettingLiquidated, address _userLiquidating, uint _liquidationAmount, ICToken _borrowedCollateralToken, ICToken _receivedCollateralToken) public {
+        cheats.startPrank(_userLiquidating);
+        address underlyingAsset = _borrowedCollateralToken.underlying();
+        IERC20(underlyingAsset).approve(address(_borrowedCollateralToken),_liquidationAmount);
+        _borrowedCollateralToken.liquidateBorrow(_userGettingLiquidated, _liquidationAmount, _receivedCollateralToken);
         cheats.stopPrank();
     }
 

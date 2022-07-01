@@ -41,8 +41,10 @@ contract BasketsPriceFeed is Ownable {
             if (underlying != address(0)) { // Wrapped tokens
                 ILendingLogic lendingLogic = ILendingLogic(lendingRegistry.protocolToLogic(lendingRegistry.wrappedToProtocol(component)));
                 linkFeed = linkFeeds[underlying];
-                //emit log_named_uint("TokenValue", 0);
-                marketCapUSD += (fmul(fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals()));
+                marketCapUSD += (
+                    fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether) *
+                    fmul(10 ** (18 - IERC20Metadata(address(componentToken)).decimals()), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
+                );
             } else { // Non-wrapped tokens
                 linkFeed = linkFeeds[component];
                 marketCapUSD += (
@@ -69,9 +71,10 @@ contract BasketsPriceFeed is Ownable {
             if (underlying != address(0)) { // Wrapped tokens
                 ILendingLogic lendingLogic = ILendingLogic(lendingRegistry.protocolToLogic(lendingRegistry.wrappedToProtocol(component)));
                 linkFeed = linkFeeds[underlying];
-                emit log_named_uint("token price: ", uint256(linkFeed.latestAnswer()));
-                emit log_named_uint("token Balance", fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether));
-                marketCapUSD += (fmul(fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals()));
+                marketCapUSD += (
+                    fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether) *
+                    fmul(10 ** (18 - IERC20Metadata(address(componentToken)).decimals()), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
+                );
             } else { // Non-wrapped tokens
                 linkFeed = linkFeeds[component];
                 marketCapUSD += (
@@ -80,8 +83,6 @@ contract BasketsPriceFeed is Ownable {
                 );
             }
         }
-	    emit log_named_uint("In Basket MarketCap: ",marketCapUSD);
-        emit log_named_uint("InBasket Price : ", fdiv(marketCapUSD, IERC20(address(basket)).totalSupply(), 1 ether));
         usdPrice = fdiv(marketCapUSD, IERC20(address(basket)).totalSupply(), 1 ether);
         return usdPrice;
     }
