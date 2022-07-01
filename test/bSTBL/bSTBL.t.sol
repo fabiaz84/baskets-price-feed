@@ -181,17 +181,14 @@ contract bSTBLTest is DSTestPlus {
 
         testingSuite.mintBasket(bSTBL,_mintAmount);
         uint bSTBLBalance = IERC20(bSTBL).balanceOf(address(this));
-        uint totalbSTBLBalance = IERC20(bSTBL).totalSupply();
 
         //Depositing bSTBL as collateral
         testingSuite.depositCollateral(bdSTBL,bSTBLBalance,true);
         uint256 bSTBLPrice = IOracle(const.oracle()).getUnderlyingPrice(bdSTBL);
-        uint collateralValue = bSTBLBalance * bSTBLPrice / 1e18;
 
         (,uint borrowingPowerBefore,) = IComptroller(const.unitroller()).getAccountLiquidity(address(this));
         testingSuite.borrowAssets(const.bdUSD(), borrowingPowerBefore);
-        uint bUSDBalance = IERC20(const.bUSD()).balanceOf(address(this));
-        (,,uint debtBefore) = IComptroller(const.unitroller()).getAccountLiquidity(address(this));
+        //We rebalance half of the RAI supply for DAI
         uint raiAmount = IERC20(const.aRAI()).balanceOf(address(const.bSTBL())) / 2;
 
         //Save aDAI and aRAI Balances before rebalancing for logging
