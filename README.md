@@ -21,3 +21,9 @@
 4. Select one of the listed private keys and run the following in a second terminal:
 
     `forge script ./src/scripts/enableBstbl.s.sol:bSTBLScript --fork-url http://localhost:8545  --private-key <SELECTED_PRIVATE_KEY> --broadcast`
+
+## Tests
+
+1. run:
+
+    `forge test --match-contract bSTBLTest --fork-url https://eth-mainnet.alchemyapi.io/v2/xxxxxxxxxxx -vv --use 0.8.1`
