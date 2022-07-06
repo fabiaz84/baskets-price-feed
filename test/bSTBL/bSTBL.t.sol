@@ -136,7 +136,6 @@ contract bSTBLTest is DSTestPlus {
         (,,uint debtBefore) = IComptroller(const.unitroller()).getAccountLiquidity(address(this));
 
         //We remove assets from the basket, which directly impacts the price of bSTBL
-        testingSuite.basketFeed().latestAnswerView();
 	uint raiAmount = IERC20(const.aRAI()).balanceOf(address(const.bSTBL())) / 3;
 	testingSuite.transferBasketAssets(const.aRAI(),address(this),raiAmount);
 
