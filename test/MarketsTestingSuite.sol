@@ -75,6 +75,8 @@ contract MarketsTestingSuite is Test {
         
         //Set Basket Price feed in Oracle
         oracle.setFeed(bdSTBL, address(basketFeed), 18);
+        
+
         //Configure bdSTBL
         unitroller._supportMarket(bdSTBL);
         unitroller._setCollateralFactor(address(bdSTBL), 500000000000000000); //50%

@@ -52,7 +52,7 @@ contract bSTBLScript is Script {
         basketFeed.setTokenFeed(const.DAI(), const.DAIFeed());
         basketFeed.setTokenFeed(const.USDC(), const.USDCFeed());
         vm.stopBroadcast();
-
+    
         //Deploy dbToken contract for bSTBL
         bytes memory dbTokenDeployArgs = abi.encode(address(const.bSTBL()),
             address(0x0Be1fdC1E87127c4fe7C05bAE6437e3cf90Bf8d8),
@@ -77,23 +77,27 @@ contract bSTBLScript is Script {
         );
         
 	    bdSTBL = ICToken(bdSTBLAddress);
+
+        emit log_named_address("bdSTBL Address: ", bdSTBLAddress);
+/*
         cheats.startPrank(unitroller.admin());
         cheats.deal(unitroller.admin(), 1000 ether);
         
         
         //Set Basket Price feed in Oracle
         oracle.setFeed(bdSTBL, address(basketFeed), 18);
+        
         //Configure bdSTBL
         unitroller._supportMarket(bdSTBL);
         unitroller._setCollateralFactor(address(bdSTBL), 500000000000000000); //50%
         unitroller._setIMFFactor(bdSTBL, 40000000000000000);
 	
         cheats.stopPrank();
-    
+        
         vm.startBroadcast();
         bdSTBL._setReserveFactor(500000000000000000); //0.5 ether
         vm.stopBroadcast();
-
+        
         //Mint bSTBL to script executor
 
         address bSTBL = const.bSTBL();
@@ -104,7 +108,7 @@ contract bSTBLScript is Script {
         recipe.toBasket{value: mintPrice}(bSTBL, 100 ether);
         cheats.stopPrank();
 
-        emit log_named_address("bdSTBL Address: ", bdSTBLAddress);
-        emit log_named_uint("bSTBL Balance: ", IERC20(bSTBL).balanceOf(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266));
+        
+        emit log_named_uint("bSTBL Balance: ", IERC20(bSTBL).balanceOf(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266));*/
     }
 }
