@@ -11,6 +11,7 @@ import {IERC20Metadata} from "@openzeppelin/token/ERC20/extensions/IERC20Metadat
 contract BasketsPriceFeed is Ownable {
     IBasketFacet immutable basket;
     ILendingRegistry immutable lendingRegistry;
+    uint8 public constant decimals = 18;
     mapping(address => IChainLinkOracle) public linkFeeds;
 
     constructor (address _basket, address _lendingRegistry) {
