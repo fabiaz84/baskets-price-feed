@@ -27,10 +27,15 @@
     `cast rpc anvil_impersonateAccount 0xFC69e0a5823E2AfCBEb8a35d33588360F1496a00`
 
     ```
-    cast send 0x0Be1fdC1E87127c4fe7C05bAE6437e3cf90Bf8d8 \
+    cast send 0xFC69e0a5823E2AfCBEb8a35d33588360F1496a00 \
+    --from 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266 \
+    --value 10ether
+    ```
+
+    ```
+    cast send 0x0Be1fdC1E87127c4fe7C05bAE6437e3cf90Bf8d8 "_supportMarket(address)(uint)" 0xAe120F0df055428E45b264E7794A18c54a2a3fAF \
     --from 0xFC69e0a5823E2AfCBEb8a35d33588360F1496a00 \
-    "_supportMarket(address)(uint)" \
-    0xAe120F0df055428E45b264E7794A18c54a2a3fAF \
+    --rpc-url http://localhost:8545
     ```
 
     ```
@@ -38,7 +43,7 @@
     --from 0xFC69e0a5823E2AfCBEb8a35d33588360F1496a00 \
     "_setCollateralFactor(address,uint)(uint)" \
     0xAe120F0df055428E45b264E7794A18c54a2a3fAF \
-    500000000000000000 \
+    500000000000000000
     ```  
 
     ```  
@@ -46,7 +51,7 @@
     --from 0xFC69e0a5823E2AfCBEb8a35d33588360F1496a00 \
     "_setIMFFactor(address,uint)(uint)" \
     0xAe120F0df055428E45b264E7794A18c54a2a3fAF \
-    40000000000000000 \
+    40000000000000000
     ```  
 
     ```  
@@ -54,7 +59,7 @@
     cast send 0x0Be1fdC1E87127c4fe7C05bAE6437e3cf90Bf8d8 \
     --from 0xFC69e0a5823E2AfCBEb8a35d33588360F1496a00 \
     "_setReserveFactor(uint)(uint)" \
-    500000000000000000 \ 
+    500000000000000000
     ```     
 
 ## Tests

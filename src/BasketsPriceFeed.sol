@@ -39,14 +39,13 @@ contract BasketsPriceFeed is Ownable {
                 ILendingLogic lendingLogic = ILendingLogic(lendingRegistry.protocolToLogic(lendingRegistry.wrappedToProtocol(component)));
                 linkFeed = linkFeeds[underlying];
                 marketCapUSD += (
-                    fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether) *
-                    fmul(10 ** (18 - IERC20Metadata(address(componentToken)).decimals()), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
+                    fmul(fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether),
+                    10 ** (36 - IERC20Metadata(address(componentToken)).decimals() - linkFeed.decimals()) * uint256(linkFeed.latestAnswer()),1 ether)
                 );
             } else { // Non-wrapped tokens
                 linkFeed = linkFeeds[component];
                 marketCapUSD += (
-                    componentToken.balanceOf(address(basket)) *
-                    fmul(10 ** (18 - IERC20Metadata(address(componentToken)).decimals()), uint256(linkFeed.latestAnswer()), 10 ** linkFeed.decimals())
+                    fmul(componentToken.balanceOf(address(basket)),10 ** (36 - IERC20Metadata(address(componentToken)).decimals() - linkFeed.decimals())  * uint256(linkFeed.latestAnswer()),1 ether)
                 );
             }
         }
