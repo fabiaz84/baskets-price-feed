@@ -4,6 +4,8 @@ import {Ownable} from "@openzeppelin/access/Ownable.sol";
 import {IBasketFacet} from "./Interfaces/IBasketFacet.sol";
 import {ILendingRegistry} from "./Interfaces/ILendingRegistry.sol";
 import {IChainLinkOracle} from "./Interfaces/IChainLinkOracle.sol";
+import {IRETH} from "./Interfaces/IRETH.sol";
+import {IWSTETH} from "./Interfaces/IWSTETH.sol";
 import {IERC20} from "@openzeppelin/token/ERC20/IERC20.sol";
 import {ILendingLogic} from "./Interfaces/ILendingLogic.sol";
 import {IERC20Metadata} from "@openzeppelin/token/ERC20/extensions/IERC20Metadata.sol";
@@ -11,6 +13,8 @@ import {IERC20Metadata} from "@openzeppelin/token/ERC20/extensions/IERC20Metadat
 contract BasketsPriceFeed is Ownable {
     IBasketFacet immutable basket;
     ILendingRegistry immutable lendingRegistry;
+    IRETH public constant RETH = IRETH(0xae78736Cd615f374D3085123A210448E74Fc6393);
+    IWSTETH public constant WSTETH = IWSTETH(0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0);
     uint8 public constant decimals = 18;
     mapping(address => IChainLinkOracle) public linkFeeds;
 
@@ -40,6 +44,18 @@ contract BasketsPriceFeed is Ownable {
                 linkFeed = linkFeeds[underlying];
                 marketCapUSD += (
                     fmul(fmul(componentToken.balanceOf(address(basket)), lendingLogic.exchangeRateView(component), 1 ether),
+                    10 ** (36 - IERC20Metadata(address(componentToken)).decimals() - linkFeed.decimals()) * uint256(linkFeed.latestAnswer()),1 ether)
+                );
+            } if (component == address(RETH)) { // rETH
+                linkFeed = linkFeeds[component];
+                marketCapUSD += (
+                    fmul(fmul(componentToken.balanceOf(address(basket)), RETH.getExchangeRate(), 1 ether),
+                    10 ** (36 - IERC20Metadata(address(componentToken)).decimals() - linkFeed.decimals()) * uint256(linkFeed.latestAnswer()),1 ether)
+                );
+            } if (component == address(WSTETH)) { // wstETH
+                linkFeed = linkFeeds[component];
+                marketCapUSD += (
+                    fmul(fmul(componentToken.balanceOf(address(basket)), WSTETH.stEthPerToken(), 1 ether),
                     10 ** (36 - IERC20Metadata(address(componentToken)).decimals() - linkFeed.decimals()) * uint256(linkFeed.latestAnswer()),1 ether)
                 );
             } else { // Non-wrapped tokens
